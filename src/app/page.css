@@ -32,6 +32,7 @@
 
 .main__background {
   width: 100%;
+  height: calc(100vh - 118px);
   opacity: .2;
   position: absolute;
   z-index: -1;
