@@ -1,9 +1,22 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import Link from "next/link";
-import "./globals.css";
+import "../../styles/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const cocoSharpTrial = localFont({
+  src: [
+    {
+      style: 'normal',
+      weight: '400',
+      path: "../vendor/fonts/CocoSharp-Regular-trial.otf",
+    },
+    {
+      style: 'normal',
+      weight: '900',
+      path: "../vendor/fonts/CocoSharp-Bold-trial.otf",
+    },
+  ]
+})
 
 export const metadata: Metadata = {
   title: "BGP AUTO",
@@ -17,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={inter.className}>
+      <body className={cocoSharpTrial.className}>
         <nav>
           <Link href="/">Home</Link>
           <Link href="/about">About</Link>
