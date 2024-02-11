@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Link from "next/link";
 import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header/Header";
 import "../../styles/globals.css";
 
 const cocoSharpTrial = localFont({
@@ -36,6 +37,7 @@ export default function RootLayout({
           <Link href="/">Home</Link>
           <Link href="/about">About</Link>
         </nav>
+        <Header />
         {children}
         <Footer />
       </body>
