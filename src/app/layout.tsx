@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Link from "next/link";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import "../../styles/globals.css";
@@ -33,10 +32,6 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={cocoSharpTrial.className}>
-        <nav>
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-        </nav>
         <Header />
         {children}
         <Footer />

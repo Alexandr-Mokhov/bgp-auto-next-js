@@ -6,10 +6,18 @@ export default function Footer() {
       <div className="footer__container">
         <div className="footer__copywriting">
           <div>
-            <span className="footer__copywriting_date">&copy;&nbsp;{new Date().getFullYear()}</span>
-            <span className="footer__copywriting_name">BGP&nbsp;AUTO</span>
+            <span className="footer__copywriting_date">
+              <strong>
+                &copy;&nbsp;{new Date().getFullYear()}
+              </strong>
+            </span>
+            <span className="footer__copywriting_name">
+              <strong>
+                BGP&nbsp;AUTO
+              </strong>
+            </span>
           </div>
-          <span className="footer__copywriting_author">created&nbsp;by&nbsp;
+          <span className="footer__copywriting_author">created&nbsp;by &nbsp;
             <a href="https://github.com/Alexandr-Mokhov" target="_blank" rel="noreferrer">
               Alexander&nbsp;Mokhov
             </a>

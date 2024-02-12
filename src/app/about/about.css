@@ -1,0 +1,145 @@
+.about-as {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  flex: 1;
+  z-index: 2;
+  padding-top: 78px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-as__container {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-as__title {
+  font-size: 26px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.about-as__masters {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+  margin: 0;
+}
+
+.about-as__master {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+}
+
+.about-as__photo {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+  will-change: transform;
+  transform-origin: center center;
+	filter: contrast(80%);
+}
+
+.about-as__master .about-as__photo {
+  transition: all .5s ease;
+}
+
+.about-as__master:hover .about-as__photo {
+  transform: scale(1.05);
+	filter: contrast(100%);
+  box-shadow: 0 0 5px 5px #AAA;
+}
+
+.about-as__name {
+  font-size: 18px;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+  padding: 15px 0 0;
+}
+
+.about-as__job {
+  font-size: 16px;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+  padding: 10px 0 0;
+  color: #E42A24;
+}
+
+.about-as__tagets {
+  margin: 20px auto;
+  padding-left: 60px;
+}
+
+.about-as__taget {
+  font-size: 14px;
+  margin: 10px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 750px) {
+  .about-as__title {
+    font-size: 20px;
+  }
+
+  .about-as__masters {
+    gap: 20px;
+  }
+
+  .about-as__photo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .about-as__name {
+    font-size: 14px;
+  }
+
+  .about-as__job {
+    font-size: 14px;
+  }
+
+  .about-as__tagets {
+    padding-left: 40px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-as {
+    padding-top: 93px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .about-as__masters {
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-as__title {
+    font-size: 18px;
+  }
+
+  .about-as__tagets {
+    padding-left: 20px;
+  }
+
+  .about-as__taget {
+    font-size: 12px;
+  }
+}

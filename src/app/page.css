@@ -30,15 +30,6 @@
   align-items: center;
 }
 
-.main__background {
-  width: 100%;
-  height: calc(100vh - 118px);
-  opacity: .2;
-  position: absolute;
-  z-index: -1;
-  object-fit: cover;
-}
-
 .main__container {
   width: 100%;
   max-width: 1280px;
@@ -114,10 +105,6 @@
   .main {
     padding-top: 93px;
     min-height: calc(100dvh - 133px);
-  }
-
-  .main__background {
-    height: calc(100% - 93px);
   }
 
   .main__container {

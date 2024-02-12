@@ -36,8 +36,8 @@ export default function Navigation() {
 			<nav className={`navigation__container ${!navMenu && "navigation__container_hide"}`}>
 				<ul className="navigation__links">
 					<li>
-						<Link href="/about-as"
-							className={`navigation__link ${pathname === "/about-as" && "navigation__link_active"}`}
+						<Link href="/about"
+							className={`navigation__link ${pathname === "/about" && "navigation__link_active"}`}
 						>О НАС</Link>
 					</li>
 					<li>
