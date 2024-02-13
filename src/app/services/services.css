@@ -43,10 +43,6 @@
     padding-top: 93px;
   }
 
-  .services__background {
-    height: calc(100% - 93px);
-  }
-
   .services__grid {
     grid-template-rows: repeat(2, 1fr);
     column-gap: 20px;
