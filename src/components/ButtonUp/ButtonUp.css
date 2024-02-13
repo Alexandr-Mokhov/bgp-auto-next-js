@@ -1,0 +1,34 @@
+.button-up {
+  position: fixed;
+  bottom: 45px;
+  right: 31px;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: 2px solid #000;
+  border-radius: 8px;
+  box-sizing: border-box;
+  opacity: .5;
+  transition: .5s ease;
+  background-image: url(../../../public/back-img.png);
+  background-position: center;
+  background-size: 18px;
+  background-repeat: no-repeat;
+}
+
+.button-up:hover {
+  opacity: 1;
+}
+
+@media screen and (min-width: 1300px) {
+  .button-up {
+    right: calc((100% - 1218px) / 2);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .button-up {
+    bottom: 50px;
+    right: 21px;
+  }
+}

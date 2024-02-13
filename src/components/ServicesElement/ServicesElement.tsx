@@ -10,7 +10,7 @@ type PropsType = {
 
 export default function ServicesElement({ path, srcImage, elementTitle }: PropsType) {
   return (
-    <Link className="services__grid-item" href={`/prices/${path}`}>
+    <Link className="services__grid-item" href={`/prices?table=${path}`}>
       <Image className="services__grid-img" src={srcImage} alt={elementTitle} placeholder="blur" />
       <div className="services__grid-circel" />
       <h2 className="services__grid-title">{elementTitle}</h2>
