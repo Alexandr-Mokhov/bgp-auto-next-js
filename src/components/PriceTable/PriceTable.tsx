@@ -12,13 +12,10 @@ type PropsType = {
 }
 
 export default function PriceTable({ blocks, blockName, title, listItems }: PropsType) {
-  // console.log(typeof blocks.to.current);
-
-
   function createListItem() {
     return listItems.map((item, i) => {
       return <li className="prices__table-name" key={i}>
-        {item.name}
+        {item.name}&nbsp;
         <span className="prices__table-price">от {item.price}</span>
       </li>;
     })
@@ -29,12 +26,12 @@ export default function PriceTable({ blocks, blockName, title, listItems }: Prop
       <h2 className="prices__title" ref={blocks[blockName]}>{title}</h2>
       <ul className="prices__table">
         <li className="prices__table-name prices__table-name_head">
-          Наименование работ
+          Наименование работ&nbsp;
           <span className="prices__head-price">Стоимость, ₽</span>
         </li>
         {createListItem()}
         <li className="prices__table-name">
-          Прочий мелкосрочный ремонт
+          Прочий мелкосрочный ремонт&nbsp;
           <span className="prices__table-price">расчет по факту</span>
         </li>
       </ul>

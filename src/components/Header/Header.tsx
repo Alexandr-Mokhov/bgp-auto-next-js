@@ -4,7 +4,7 @@ import Navigation from '../Navigation/Navigation';
 import './Header.css';
 
 const isInscribed = false;
-
+//** */
 // { isInscribed, date, time }
 export default function Header() {
   return (

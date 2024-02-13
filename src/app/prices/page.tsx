@@ -7,7 +7,7 @@ import PriceTable from '../../components/PriceTable/PriceTable';
 import ButtonUp from '../../components/ButtonUp/ButtonUp';
 import useScroll from '../../utils/checkScroll';
 import { prices } from '../../constants/prices';
-import backgroundPrices from '../../../public/background-prices.jpg';
+// import backgroundPrices from '../../../public/background-prices.jpg';
 import './Prices.css';
 
 export default function Prices() {
@@ -22,7 +22,7 @@ export default function Prices() {
   }
   // const params = useParams()
 	// console.log(params);
-
+  //** */
   // const scrollToBlock = (block = "") => {
   //   console.log(blocks);
     
@@ -46,10 +46,10 @@ export default function Prices() {
       key={i}
     />)
   }
-
+  //** разобраться с предварительным просмотром изображений */
   return (
     <main className="prices" aria-label="Список работ и их стоимость">
-			<Image className="background" src={backgroundPrices} alt={"Фоновое изображение с ремонтом авто"} placeholder="blur" />
+			<Image className="background" src="/background-prices.jpg" width={597} height={620} alt="Ремонт авто" />
       {scroll > maxScroll && <ButtonUp />}
       <div className="prices__container">
         {createPriceTable()}

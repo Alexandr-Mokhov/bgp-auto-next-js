@@ -9,7 +9,7 @@ export default function Navigation() {
 	// const [navMenu, setNavMenu] = useState(false);
 	const pathname = usePathname();
 	const navMenu = false;
-
+	//** */
 	// useEffect(() => {
 	// 	if (!navMenu) return;
 	// function handleClickOverlay(evt: MouseEvent) {

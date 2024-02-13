@@ -23,9 +23,7 @@ export default function Footer() {
             </a>
           </span>
         </div>
-        <div className="footer__social">
-          <a href="https://vk.com/bgp.auto" target="_blank" rel="noreferrer"><div className="footer__social-icon" /></a>
-        </div>
+        <a href="https://vk.com/bgp.auto" target="_blank" rel="noreferrer" className="footer__social-icon"><div  /></a>
       </div>
     </footer>
   )
