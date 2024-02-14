@@ -10,7 +10,7 @@
   box-sizing: border-box;
   opacity: .5;
   transition: .5s ease;
-  background-image: url(../../../public/back-img.png);
+  background-image: url(/back-img.png);
   background-position: center;
   background-size: 18px;
   background-repeat: no-repeat;

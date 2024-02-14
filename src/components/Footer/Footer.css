@@ -32,15 +32,13 @@
   margin: 0 7px;
 }
 
-.footer__social-icon {
+.footer__social-link {
   margin-right: 30px;
-  background-image: url(../../../public/logo-vk.png);
-  background-repeat: no-repeat;
   width: 30px;
   height: 30px;
-  background-size: contain;
-  outline: none;
-  border: none;
+}
+
+.footer__social-icon {
   transition: .5s ease;
   opacity: .5;
 }
@@ -55,7 +53,7 @@
     margin-left: 20px;
   }
 
-  .footer__social-icon {
+  .footer__social-link {
     margin-right: 20px;
   }
 }

@@ -35,7 +35,7 @@
 }
 
 .header__logo {
-  background-image: url(../../../public/header-three-gears.svg);
+  background-image: url(/header-three-gears.svg);
   width: 72px;
   height: 72px;
   background-size: contain;
@@ -116,11 +116,11 @@
 }
 
 .header__reception-icon_not-inscribed {
-  background-image: url(../../../public/logo-list.png);
+  background-image: url(/logo-list.png);
 }
 
 .header__reception-icon_inscribed {
-  background-image: url(../../../public/logo-list-ok.png);
+  background-image: url(/logo-list-ok.png);
 }
 
 .header__address-container {
@@ -138,7 +138,7 @@
 }
 
 .header__address-logo {
-  background-image: url(../../../public/logo-geo-red.png);
+  background-image: url(/logo-geo-red.png);
   width: 25px;
   height: 35px;
   background-size: contain;

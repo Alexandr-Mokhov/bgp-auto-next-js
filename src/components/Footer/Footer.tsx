@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import logoVk from '../../../public/logo-vk.png';
 import './Footer.css';
 
 export default function Footer() {
@@ -23,7 +25,9 @@ export default function Footer() {
             </a>
           </span>
         </div>
-        <a href="https://vk.com/bgp.auto" target="_blank" rel="noreferrer" className="footer__social-icon"><div /></a>
+        <a href="https://vk.com/bgp.auto" target="_blank" rel="noreferrer" className="footer__social-link">
+          <Image className="footer__social-icon" src={logoVk} width={30} height={30} alt="ВКонтакте" placeholder="blur" />
+        </a>
       </div>
     </footer>
   )

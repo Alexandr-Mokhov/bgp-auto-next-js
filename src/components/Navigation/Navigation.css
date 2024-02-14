@@ -95,11 +95,11 @@
   }
 
   .navigation__button-menu_open {
-    background-image: url(../../../public/button-menu-open.svg);
+    background-image: url(/button-menu-open.svg);
   }
 
   .navigation__button-menu_close {
-    background-image: url(../../../public/button-menu-close.svg);
+    background-image: url(/button-menu-close.svg);
   }
 
   .navigation__overlay {
