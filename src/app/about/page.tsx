@@ -8,27 +8,56 @@ import './about.css';
 export default function About() {
   return (
     <main className="about-as" aria-label="Наши мастера и ценности">
-			<Image className="background" src={backgroundAbout} alt={"Фоновое изображение с ремонтом авто"} placeholder="blur" />
+      <Image
+        className="background"
+        src={backgroundAbout}
+        width={1000}
+        height={1000}
+        alt="Ремонт авто"
+        // placeholder="blur"
+        priority={true}
+      />
       <div className="about-as__container">
         <h1 className="about-as__title">Добро пожаловать в автосервис BGP&nbsp;AUTO!</h1>
         <ul className="about-as__masters">
           <li>
             <a href="https://vk.com/ibasalygin" target="_blank" rel="noreferrer" className="about-as__master">
-              <Image className="about-as__photo" src={photoIvan} alt="Басалыгин Иван, моторист" placeholder="blur" />
+              <Image
+                className="about-as__photo"
+                src={photoIvan}
+                width={300}
+                height={300}
+                alt="Басалыгин Иван, моторист"
+                placeholder="blur"
+              />
               <p className="about-as__name">Басалыгин Иван</p>
               <p className="about-as__job">моторист</p>
             </a>
           </li>
           <li>
             <a href="https://vk.com/dimagonchrov" target="_blank" rel="noreferrer" className="about-as__master">
-              <Image className="about-as__photo" src={photoDmitry} alt="Гончаров Дмитрий, механик" placeholder="blur" />
+              <Image
+                className="about-as__photo"
+                src={photoDmitry}
+                width={300}
+                height={300}
+                alt="Гончаров Дмитрий, механик"
+                placeholder="blur"
+              />
               <p className="about-as__name">Гончаров Дмитрий</p>
               <p className="about-as__job">механик</p>
             </a>
           </li>
           <li>
             <a href="https://vk.com/shifer96" target="_blank" rel="noreferrer" className="about-as__master">
-              <Image className="about-as__photo" src={photoAlexey} alt="Плисовских Алексей, диагност" placeholder="blur" />
+              <Image
+                className="about-as__photo"
+                src={photoAlexey}
+                width={300}
+                height={300}
+                alt="Плисовских Алексей, диагност"
+                placeholder="blur"
+              />
               <p className="about-as__name">Плисовских Алексей</p>
               <p className="about-as__job">диагност</p>
             </a>

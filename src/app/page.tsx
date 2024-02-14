@@ -5,7 +5,15 @@ import "./page.css";
 export default function Home() {
   return (
     <main className="main" aria-label="Автосервис БГП авто, главная страница">
-      <Image className="background" src={backgroundMain} alt={"Фоновое изображение с ремонтом авто"} placeholder="blur" />
+      <Image
+        className="background"
+        src={backgroundMain}
+        width={1000}
+        height={1000}
+        alt="Ремонт авто"
+        // placeholder="blur"
+        priority={true}
+      />
       <div className="main__container">
         <div className="main__title-container">
           <div className="main__title-icon main__title-icon_red" />

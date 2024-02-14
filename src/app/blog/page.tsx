@@ -20,10 +20,11 @@ export default function Blog() {
 			<Image
 				className="background"
 				src={backgroundServices}
-				width={597}
-				height={620}
+				width={1000}
+				height={1000}
 				alt="Ремонт авто"
-				placeholder="blur"
+				// placeholder="blur"
+				priority={true}
 			/>
 			{scroll > maxScroll && <ButtonUp />}
 			<ListContainer list={posts} onCardClick={onCardClick} />

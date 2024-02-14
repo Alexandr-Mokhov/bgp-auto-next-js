@@ -1,11 +1,19 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import backgroundMain from '../../public/background-main.jpg';
+import backgroundServices from '../../public/background-services.jpg';
 
 export default function NotFound() {
   return (
     <main className="not-found" aria-label="У нас нет страницы по указанному пути">
-      <Image className="background" src={backgroundMain} alt={"Фоновое изображение с ремонтом авто"} placeholder="blur" />
+      <Image
+        className="background"
+        src={backgroundServices}
+        width={1000}
+        height={1000}
+        alt="Ремонт авто"
+        // placeholder="blur" //** */
+        priority={true}
+      />
       <section className="not-found__container">
         <div className="not-found__container-text">
           <h1 className="not-found__title">404</h1>

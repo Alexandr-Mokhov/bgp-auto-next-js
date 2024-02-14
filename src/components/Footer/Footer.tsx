@@ -26,7 +26,13 @@ export default function Footer() {
           </span>
         </div>
         <a href="https://vk.com/bgp.auto" target="_blank" rel="noreferrer" className="footer__social-link">
-          <Image className="footer__social-icon" src={logoVk} width={30} height={30} alt="ВКонтакте" />
+          <Image
+            className="footer__social-icon"
+            src={logoVk}
+            width={30}
+            height={30}
+            alt="ВКонтакте"
+          />
         </a>
       </div>
     </footer>
