@@ -1,6 +1,6 @@
-import imageCarBottom from '../images/promotions-car-bottom.jpg';
-import imageCar from '../images/promotions-car.jpg';
-import imageOil from '../images/promotions-oil.png';
+import imageCarBottom from '../../public/promotions-car-bottom.jpg';
+import imageCar from '../../public/promotions-car.jpg';
+import imageOil from '../../public/promotions-oil.png';
 
 export const promotions = [
   {

@@ -46,10 +46,10 @@ export default function Prices() {
       key={i}
     />)
   }
-  //** разобраться с предварительным просмотром изображений */
+  //** разобраться с предварительным просмотром изображений , возможно заменить src как в других компонентах */
   return (
     <main className="prices" aria-label="Список работ и их стоимость">
-			<Image className="background" src="/background-prices.jpg" width={597} height={620} alt="Ремонт авто" />
+			<Image className="background" src="/background-prices.jpg" width={597} height={620} alt="Ремонт авто" priority={true} />
       {scroll > maxScroll && <ButtonUp />}
       <div className="prices__container">
         {createPriceTable()}

@@ -17,7 +17,7 @@ export default function Services() {
 
 	return (
 		<main className="services" aria-label="Наши основные услуги">
-			<Image className="background" src={backgroundServises} alt={"Фоновое изображение с ремонтом авто"} placeholder="blur" />
+			<Image className="background" src={backgroundServises} alt={"Ремонт авто"} placeholder="blur" />
 			<div className="services__container">
 				<section className="services__grid">
 					{createServicesList()}

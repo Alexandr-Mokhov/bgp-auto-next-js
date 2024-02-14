@@ -13,7 +13,7 @@ export default function Footer() {
             </span>
             <span className="footer__copywriting_name">
               <strong>
-                BGP&nbsp;AUTO
+                &nbsp;BGP&nbsp;AUTO&nbsp;
               </strong>
             </span>
           </div>
@@ -23,7 +23,7 @@ export default function Footer() {
             </a>
           </span>
         </div>
-        <a href="https://vk.com/bgp.auto" target="_blank" rel="noreferrer" className="footer__social-icon"><div  /></a>
+        <a href="https://vk.com/bgp.auto" target="_blank" rel="noreferrer" className="footer__social-icon"><div /></a>
       </div>
     </footer>
   )
