@@ -15,7 +15,15 @@ export default function ListContainer({ list, onCardClick }: { list: ListType[],
       }
 
       return <li className="list__item" key={i}>
-        <Image className="list__item-image" src={item.image} alt={item.title} onClick={handleClick} />
+        <Image
+          className="list__item-image"
+          src={item.image}
+          alt={item.title}
+          onClick={handleClick}
+          width={300}
+          height={300}
+          placeholder="blur"
+        />
         <h2 className="list__item-title">{item.title}</h2>
         <div className="list__item-description">
           {item.paragraph.map((elem: string, i: number) => <p className="list__item-text" key={i}>{elem}</p>)}

@@ -7,13 +7,24 @@ import useScroll from '../../utils/checkScroll';
 import backgroundPromotions from '../../../public/background-promotions.jpg'
 import './promotions.css';
 
-export default function Promotions({ onCardClick }: {onCardClick: Function}) {
+export default function Promotions() {
   const scroll = useScroll();
   const maxScroll = 300;
 
+  function onCardClick() {
+    //** добавить функциональность открытия модального окна и вынести в утилс */
+  }
+
   return (
     <main className="promotions" aria-label="Наши акционные предложения">
-			<Image className="background" src={backgroundPromotions} width={597} height={620} alt="Ремонт авто" placeholder="blur" />
+      <Image
+        className="background"
+        src={backgroundPromotions}
+        width={1000}
+        height={1000}
+        alt="Ремонт авто"
+        placeholder="blur"
+      />
       {scroll > maxScroll && <ButtonUp />}
       <ListContainer list={promotions} onCardClick={onCardClick} />
     </main>

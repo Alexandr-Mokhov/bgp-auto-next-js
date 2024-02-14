@@ -1,15 +1,15 @@
-import image1 from '../images/blog-image-1.jpg';
-import image2 from '../images/blog-image-2.jpg';
-import image3 from '../images/blog-image-3.jpg';
-import image4 from '../images/blog-image-4.jpg';
-import image5 from '../images/blog-image-5.jpg';
-import image6 from '../images/blog-image-6.jpg';
-import image7 from '../images/blog-image-7.jpg';
-import image8 from '../images/blog-image-8.jpg';
-import image9 from '../images/blog-image-9.jpg';
-import image10 from '../images/blog-image-10.jpg';
-import image11 from '../images/blog-image-11.jpg';
-import image12 from '../images/blog-image-12.jpg';
+import image1 from '../../public/blog-image-1.jpg';
+import image2 from '../../public/blog-image-2.jpg';
+import image3 from '../../public/blog-image-3.jpg';
+import image4 from '../../public/blog-image-4.jpg';
+import image5 from '../../public/blog-image-5.jpg';
+import image6 from '../../public/blog-image-6.jpg';
+import image7 from '../../public/blog-image-7.jpg';
+import image8 from '../../public/blog-image-8.jpg';
+import image9 from '../../public/blog-image-9.jpg';
+import image10 from '../../public/blog-image-10.jpg';
+import image11 from '../../public/blog-image-11.jpg';
+import image12 from '../../public/blog-image-12.jpg';
 
 export const posts = [
   {
