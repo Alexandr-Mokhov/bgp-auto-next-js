@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import backgroundAbout from '../../../public/background-about-as.jpg';
+import backgroundAbout from '@/../public/background-about-as.jpg';
 import './about.css';
-import PhotoIvan from '@/components/PhotoIvan/PhotoIvan';
-import PhotoDmitry from '@/components/PhotoDmitry/PhotoDmitry';
-import PhotoAlexey from '@/components/PhotoAlexey/PhotoAlexey';
+import PhotoIvan from '@/components/PhotoMasters/PhotoIvan';
+import PhotoDmitry from '@/components/PhotoMasters/PhotoDmitry';
+import PhotoAlexey from '@/components/PhotoMasters/PhotoAlexey';
 
 export default function About() {
   return (

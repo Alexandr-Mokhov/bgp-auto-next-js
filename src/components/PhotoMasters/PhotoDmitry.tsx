@@ -1,5 +1,6 @@
 import Image from "next/image";
-import photoDmitry from '../../../public/master-goncharov.jpg';
+import photoDmitry from '@/../public/master-goncharov.jpg';
+import "./PhotoMasters.css";
 
 export default function PhotoDmitry() {
 	return (

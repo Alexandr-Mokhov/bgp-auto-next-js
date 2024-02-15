@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { useEffect, useRef } from 'react';
-import backgroundPrices from '../../../public/background-prices.jpg';
+import backgroundPrices from '@/../public/background-prices.jpg';
 import './prices.css';
 import PriceTable from '@/components/PriceTable/PriceTable';
 import ButtonUp from '@/components/ButtonUp/ButtonUp';

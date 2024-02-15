@@ -1,5 +1,6 @@
 import Image from "next/image";
-import photoAlexey from '../../../public/master-plisovskikh.jpg';
+import photoAlexey from '@/../public/master-plisovskikh.jpg';
+import "./PhotoMasters.css";
 
 export default function PhotoAlexey() {
 	return (

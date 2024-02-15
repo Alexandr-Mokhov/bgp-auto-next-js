@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import logoVk from '../../../public/logo-vk.png';
+import logoVk from '@/../public/logo-vk.png';
 import './Footer.css';
 
 export default function Footer() {

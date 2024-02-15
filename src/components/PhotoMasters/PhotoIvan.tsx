@@ -1,5 +1,6 @@
 import Image from "next/image";
-import photoIvan from '../../../public/master-basalygin.jpg';
+import photoIvan from '@/../public/master-basalygin.jpg';
+import "./PhotoMasters.css";
 
 export default function PhotoIvan() {
 	return (

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import headerLogo from "../../../public/header-three-gears.svg";
+import headerLogo from "@/../public/header-three-gears.svg";
 import './Header.css';
 import Navigation from '../Navigation/Navigation';
 // import { resetScroll } from '@/utils/resetScroll';
