@@ -2,7 +2,7 @@
 // import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation'
 import Link from 'next/link';
-// import { resetScroll } from '../../utils/resetScroll';
+// import { resetScroll } from '@/utils/resetScroll';
 import './Navigation.css';
 
 export default function Navigation() {

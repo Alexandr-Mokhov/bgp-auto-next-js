@@ -1,10 +1,10 @@
 "use client"
 import Image from 'next/image';
 import backgroundPromotions from '../../../public/background-promotions.jpg'
-import ListContainer from '../../components/ListContainer/ListContainer';
-import ButtonUp from '../../components/ButtonUp/ButtonUp';
-import useScroll from '../../utils/checkScroll';
-import { promotions } from '../../constants/promotions';
+import ListContainer from '@/components/ListContainer/ListContainer';
+import ButtonUp from '@/components/ButtonUp/ButtonUp';
+import useScroll from '@/utils/checkScroll';
+import { promotions } from '@/constants/promotions';
 
 export default function Promotions() {
   const scroll = useScroll();

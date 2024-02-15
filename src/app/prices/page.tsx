@@ -5,10 +5,10 @@ import { useParams } from 'next/navigation';
 import { useEffect, useRef } from 'react';
 import backgroundPrices from '../../../public/background-prices.jpg';
 import './prices.css';
-import PriceTable from '../../components/PriceTable/PriceTable';
-import ButtonUp from '../../components/ButtonUp/ButtonUp';
-import useScroll from '../../utils/checkScroll';
-import { prices } from '../../constants/prices';
+import PriceTable from '@/components/PriceTable/PriceTable';
+import ButtonUp from '@/components/ButtonUp/ButtonUp';
+import useScroll from '@/utils/checkScroll';
+import { prices } from '@/constants/prices';
 
 export default function Prices() {
   const scroll = useScroll();

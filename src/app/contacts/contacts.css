@@ -1,0 +1,138 @@
+.contacts {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts__title {
+  font-size: 26px;
+  text-align: center;
+  margin: 20px 0 20px;
+}
+
+.contacts__work {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.contacts__work:first-of-type {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.contacts__masters {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+  margin: 10px 0 30px;
+}
+
+.contacts__master {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contacts__name {
+  font-size: 18px;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+  padding: 15px 0 0;
+}
+
+.contacts__job {
+  font-size: 16px;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+  padding: 10px 0 0;
+  color: #E42A24;
+}
+
+.contacts__connection {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  font-weight: 900;
+  border: solid 1px #000;
+  border-radius: 8px;
+  width: 180px;
+  height: 25px;
+  text-align: center;
+  padding-top: 8px;
+  margin-top: 15px;
+  transition: all .5s ease;
+  will-change: transform;
+  cursor: pointer;
+}
+
+.contacts__connection:hover {
+  transform: scale(1.05);
+  opacity: .9;
+}
+
+@media screen and (max-width: 750px) {
+  .contacts__title {
+    font-size: 20px;
+  }
+
+  .contacts__work:first-of-type {
+    font-size: 16px;
+  }
+
+  .contacts__masters {
+    gap: 20px;
+  }
+
+  .contacts__name {
+    font-size: 14px;
+  }
+
+  .contacts__job {
+    font-size: 14px;
+  }
+
+  .contacts__connection {
+    width: 150px;
+    height: 30px;
+    padding: 6px 0;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contacts__title {
+    margin: 20px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .contacts__masters {
+    flex-wrap: wrap;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+  }
+
+  .contacts__master {
+    margin: 0 0 30px 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contacts__connection {
+    font-size: 12px;
+    height: 27px;
+    padding: 6px 0;
+  }
+
+  .contacts__title {
+    font-size: 18px;
+    margin: 20px;
+  }
+}

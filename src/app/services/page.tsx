@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import backgroundServises from '../../../public/background-services.jpg';
 import './services.css';
-import ServicesElement from '../../components/ServicesElement/ServicesElement';
-import { services } from '../../constants/services';
+import ServicesElement from '@/components/ServicesElement/ServicesElement';
+import { services } from '@/constants/services';
 
 export default function Services() {
 

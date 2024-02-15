@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import backgroundAbout from '../../../public/background-about-as.jpg';
 import './about.css';
-import photoAlexey from '../../../public/master-plisovskikh.jpg';
-import photoDmitry from '../../../public/master-goncharov.jpg';
-import photoIvan from '../../../public/master-basalygin.jpg';
+import PhotoIvan from '@/components/PhotoIvan/PhotoIvan';
+import PhotoDmitry from '@/components/PhotoDmitry/PhotoDmitry';
+import PhotoAlexey from '@/components/PhotoAlexey/PhotoAlexey';
 
 export default function About() {
   return (
@@ -22,42 +22,27 @@ export default function About() {
         <ul className="about-as__masters">
           <li>
             <a href="https://vk.com/ibasalygin" target="_blank" rel="noreferrer" className="about-as__master">
-              <Image
-                className="about-as__photo"
-                src={photoIvan}
-                width={300}
-                height={300}
-                alt="Басалыгин Иван, моторист"
-                placeholder="blur"
-              />
+              <div className="about-as__photo">
+                <PhotoIvan />
+              </div>
               <p className="about-as__name">Басалыгин Иван</p>
               <p className="about-as__job">моторист</p>
             </a>
           </li>
           <li>
             <a href="https://vk.com/dimagonchrov" target="_blank" rel="noreferrer" className="about-as__master">
-              <Image
-                className="about-as__photo"
-                src={photoDmitry}
-                width={300}
-                height={300}
-                alt="Гончаров Дмитрий, механик"
-                placeholder="blur"
-              />
+              <div className="about-as__photo">
+                <PhotoDmitry />
+              </div>
               <p className="about-as__name">Гончаров Дмитрий</p>
               <p className="about-as__job">механик</p>
             </a>
           </li>
           <li>
             <a href="https://vk.com/shifer96" target="_blank" rel="noreferrer" className="about-as__master">
-              <Image
-                className="about-as__photo"
-                src={photoAlexey}
-                width={300}
-                height={300}
-                alt="Плисовских Алексей, диагност"
-                placeholder="blur"
-              />
+              <div className="about-as__photo">
+                <PhotoAlexey />
+              </div>
               <p className="about-as__name">Плисовских Алексей</p>
               <p className="about-as__job">диагност</p>
             </a>

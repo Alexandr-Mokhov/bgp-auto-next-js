@@ -48,6 +48,13 @@ body {
   object-fit: cover;
 }
 
+.photo {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
 .not-found {
   width: 100%;
   min-height: calc(100vh - 118px);
@@ -96,6 +103,13 @@ body {
 .not-found__back:hover {
   opacity: .7;
   transform: scale(1.1);
+}
+
+@media screen and (max-width: 750px) {
+  .photo {
+    width: 150px;
+    height: 150px;
+  }
 }
 
 @media screen and (max-width: 600px) {
