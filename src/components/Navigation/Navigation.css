@@ -13,7 +13,6 @@
 }
 
 .navigation__link {
-	text-decoration: none;
 	color: #FFF;
 	transition: all .3s ease;
 	line-height: 16px;
