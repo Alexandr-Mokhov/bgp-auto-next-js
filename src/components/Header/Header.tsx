@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import headerLogo from "../../../public/header-three-gears.svg";
 import './Header.css';
 import Navigation from '../Navigation/Navigation';
 // import { resetScroll } from '../../utils/resetScroll';
@@ -11,7 +13,14 @@ export default function Header() {
     <header className="header">
       <div className="header__container">
         <Link className="header__logo-container" href="/">
-          <div className="header__logo" />
+          <Image
+            className="header__logo"
+            src={headerLogo}
+            width={72}
+            height={72}
+            alt="Логотип сайта BGP AUTO"
+            priority={true}
+          />
           <div className="header__title-container">
             <p className="header__title">BGP AUTO</p>
             <p className="header__subtitle">AUTOWERKSTATT</p>
