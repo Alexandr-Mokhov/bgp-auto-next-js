@@ -1,7 +1,7 @@
 import Link from "next/link";
+import './Header.css';
 import Navigation from '../Navigation/Navigation';
 // import { resetScroll } from '../../utils/resetScroll';
-import './Header.css';
 
 const isInscribed = false;
 //** */

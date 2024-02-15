@@ -1,11 +1,11 @@
 "use client"
 import Image from 'next/image';
-import useScroll from '../../utils/checkScroll';
-import ButtonUp from '../../components/ButtonUp/ButtonUp';
-import ListContainer from '../../components/ListContainer/ListContainer';
-import { posts } from '../../constants/posts';
 import backgroundServices from '../../../public/background-services.jpg';
 import './blog.css';
+import ListContainer from '../../components/ListContainer/ListContainer';
+import ButtonUp from '../../components/ButtonUp/ButtonUp';
+import useScroll from '../../utils/checkScroll';
+import { posts } from '../../constants/posts';
 
 export default function Blog() {
 	const maxScroll = 300;
