@@ -32,6 +32,10 @@
   margin: 0 7px;
 }
 
+.footer__copywriting_author {
+  color: grey;
+}
+
 .footer__social-link {
   margin-right: 30px;
   width: 30px;
@@ -62,9 +66,5 @@
   .footer__copywriting {
     display: flex;
     flex-direction: column;
-  }
-
-  .footer__copywriting_author {
-    margin-left: 11px;
   }
 }

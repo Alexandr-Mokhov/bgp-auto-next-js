@@ -7,7 +7,7 @@ import photoIvan from '../../../public/master-basalygin.jpg';
 
 export default function About() {
   return (
-    <main className="about-as" aria-label="Наши мастера и ценности">
+    <main className="main" aria-label="Наши мастера и ценности">
       <Image
         className="background"
         src={backgroundAbout}
@@ -17,7 +17,7 @@ export default function About() {
         // placeholder="blur"
         priority={true}
       />
-      <div className="about-as__container">
+      <div className="about-as">
         <h1 className="about-as__title">Добро пожаловать в автосервис BGP&nbsp;AUTO!</h1>
         <ul className="about-as__masters">
           <li>

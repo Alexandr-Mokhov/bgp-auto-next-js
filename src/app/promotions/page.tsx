@@ -1,7 +1,6 @@
 "use client"
 import Image from 'next/image';
 import backgroundPromotions from '../../../public/background-promotions.jpg'
-import './promotions.css';
 import ListContainer from '../../components/ListContainer/ListContainer';
 import ButtonUp from '../../components/ButtonUp/ButtonUp';
 import useScroll from '../../utils/checkScroll';
@@ -16,7 +15,7 @@ export default function Promotions() {
   }
 
   return (
-    <main className="promotions" aria-label="Наши акционные предложения">
+    <main className="main" aria-label="Наши акционные предложения">
       <Image
         className="background"
         src={backgroundPromotions}

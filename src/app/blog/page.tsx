@@ -1,7 +1,6 @@
 "use client"
 import Image from 'next/image';
 import backgroundServices from '../../../public/background-services.jpg';
-import './blog.css';
 import ListContainer from '../../components/ListContainer/ListContainer';
 import ButtonUp from '../../components/ButtonUp/ButtonUp';
 import useScroll from '../../utils/checkScroll';
@@ -16,7 +15,7 @@ export default function Blog() {
 	}
 
 	return (
-		<main className="blog" aria-label="Фото и описание наших работ">
+		<main className="main" aria-label="Фото и описание наших работ">
 			<Image
 				className="background"
 				src={backgroundServices}

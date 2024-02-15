@@ -48,7 +48,7 @@ export default function Prices() {
   }
 
   return (
-    <main className="prices" aria-label="Список работ и их стоимость">
+    <main className="main" aria-label="Список работ и их стоимость">
       <Image
         className="background"
         src={backgroundPrices}
@@ -59,7 +59,7 @@ export default function Prices() {
         priority={true}
       />
       {scroll > maxScroll && <ButtonUp />}
-      <div className="prices__container">
+      <div className="prices">
         {createPriceTable()}
       </div>
     </main>

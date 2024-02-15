@@ -19,8 +19,8 @@ export default function Footer() {
               </strong>
             </span>
           </div>
-          <span className="footer__copywriting_author">created&nbsp;by &nbsp;
-            <a href="https://github.com/Alexandr-Mokhov" target="_blank" rel="noreferrer">
+          <span >created&nbsp;by &nbsp;
+            <a className="footer__copywriting_author" href="https://github.com/Alexandr-Mokhov" target="_blank" rel="noreferrer">
               Alexander&nbsp;Mokhov
             </a>
           </span>

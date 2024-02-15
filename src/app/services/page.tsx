@@ -16,7 +16,7 @@ export default function Services() {
 	}
 
 	return (
-		<main className="services" aria-label="Наши основные услуги">
+		<main className="main" aria-label="Наши основные услуги">
 			<Image
 				className="background"
 				src={backgroundServises}
@@ -26,7 +26,7 @@ export default function Services() {
 				// placeholder="blur"
 				priority={true}
 			/>
-			<div className="services__container">
+			<div className="services">
 				<section className="services__grid">
 					{createServicesList()}
 				</section>
