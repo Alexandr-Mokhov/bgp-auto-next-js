@@ -1,0 +1,79 @@
+.reception {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.reception__title {
+  font-size: 26px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.reception__button {
+  width: 200px;
+  align-self: flex-start;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 900;
+  border-radius: 5px;
+  height: 34px;
+  text-align: center;
+  transition: all .5s ease;
+  will-change: transform;
+  cursor: pointer;
+  align-self: center;
+  margin: 10px 10px;
+}
+
+.reception__button_editing {
+  background: none;
+  border: solid 1px #000;
+}
+
+.reception__button_reset {
+  background-color: #E42A24;
+  border: solid 1px rgb(230, 20, 20);
+  color: #FFF;
+}
+
+.reception__button:hover {
+  transform: scale(1.05);
+  opacity: .9;
+}
+
+@media screen and (max-width: 700px) {
+  .reception__title {
+    font-size: 22px;
+    margin: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .reception__title {
+    font-size: 20px;
+    margin: 15px 20px;
+  }
+
+  .reception__button {
+    width: 160px;
+    align-self: flex-start;
+    font-size: 12px;
+    border-radius: 5px;
+    height: 30px;
+    text-align: center;
+    align-self: center;
+    margin: 10px 10px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .reception__button-contaiter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
