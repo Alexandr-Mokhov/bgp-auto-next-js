@@ -1,38 +1,37 @@
 "use client"
-// import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation'
 import Link from 'next/link';
-// import { resetScroll } from '@/utils/resetScroll';
 import './Navigation.css';
 
 export default function Navigation() {
-	// const [navMenu, setNavMenu] = useState(false);
+	const [navMenu, setNavMenu] = useState(false);
 	const pathname = usePathname();
-	const navMenu = false;
-	//** */
-	// useEffect(() => {
-	// 	if (!navMenu) return;
-	// function handleClickOverlay(evt: MouseEvent) {
-	// 	if (evt.target.className.indexOf('navigation__overlay') === 0) {
-	// 		setNavMenu(!navMenu);
-	// 	}
-	// }
-	// document.addEventListener('mousedown', handleClickOverlay);
-	// return () => {
-	// 	document.removeEventListener('mousedown', handleClickOverlay);
-	// }
-	// }, [navMenu])
 
-	// useEffect(() => {
-	// 	setNavMenu(false);
-	// }, [pathname]);
+	useEffect(() => {
+		if (!navMenu) return;
+
+		function handleClickOverlay(evt: MouseEvent) {
+			if ((evt.target as HTMLElement).className.indexOf('navigation__overlay') === 0) {
+				setNavMenu(!navMenu);
+			}
+		}
+		document.addEventListener('mousedown', handleClickOverlay);
+		return () => {
+			document.removeEventListener('mousedown', handleClickOverlay);
+		}
+	}, [navMenu])
+
+	useEffect(() => {
+		setNavMenu(false);
+	}, [pathname]);
 
 	return (
 		<div className="navigation">
 			<button className={
 				`navigation__button-menu
           ${navMenu ? "navigation__button-menu_close" : "navigation__button-menu_open"}
-          `} />
+          `} onClick={() => setNavMenu(!navMenu)} />
 			<nav className={`navigation__container ${!navMenu && "navigation__container_hide"}`}>
 				<ul className="navigation__links">
 					<li>

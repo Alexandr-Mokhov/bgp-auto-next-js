@@ -8,7 +8,7 @@ import PriceTable from '@/components/PriceTable/PriceTable';
 import ButtonUp from '@/components/ButtonUp/ButtonUp';
 import useScroll from '@/utils/useScroll';
 import { prices } from '@/constants/prices';
-import './prices.css';
+import './price.css';
 
 export default function Prices() {
   const scroll = useScroll();

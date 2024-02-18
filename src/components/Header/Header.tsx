@@ -5,10 +5,7 @@ import Image from "next/image";
 import headerLogo from "@/../public/header-three-gears.svg";
 import './Header.css';
 import Navigation from '../Navigation/Navigation';
-// import { resetScroll } from '@/utils/resetScroll';
 
-const isInscribed = false;
-//** */
 export default function Header() {
   const [isInscribed, setIsInscribed] = useState(false);
   const [dataFromLocalStorage, setDataFromLocalStorage] = useState({});
