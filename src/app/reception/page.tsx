@@ -2,11 +2,11 @@
 import { FormEvent, useEffect, useState } from 'react';
 import Image from 'next/image';
 import backgroundAboutAs from '../../../public/background-about-as.jpg';
+import './reception.css';
 // import { useFormWithValidation } from '../../utils/formValidator';
 // import Registration from '../../components/Registration/Registration';
 // import Preloader from '../../components/Preloader/Preloader';
 // import Form from '../../components/Form/Form';
-import './reception.css';
 
 export default function Reception(
 //   {
@@ -116,7 +116,6 @@ export default function Reception(
         width={1000}
         height={1000}
         alt="Ремонт авто"
-        // placeholder="blur"
         priority={true}
       />
       {/* {isLoading && <Preloader />} */}

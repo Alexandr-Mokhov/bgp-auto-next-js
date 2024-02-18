@@ -11,7 +11,6 @@ export default function NotFound() {
         width={1000}
         height={1000}
         alt="Ремонт авто"
-        // placeholder="blur" //** */
         priority={true}
       />
       <section className="not-found__container">

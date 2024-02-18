@@ -22,7 +22,6 @@ export default function Promotions() {
         width={1000}
         height={1000}
         alt="Ремонт авто"
-        // placeholder="blur"
         priority={true}
       />
       {scroll > maxScroll && <ButtonUp />}

@@ -8,7 +8,7 @@ import PriceTable from '@/components/PriceTable/PriceTable';
 import ButtonUp from '@/components/ButtonUp/ButtonUp';
 import useScroll from '@/utils/checkScroll';
 import { prices } from '@/constants/prices';
-import './prices.css';
+// import './prices.css';
 
 export default function Prices() {
   const scroll = useScroll();
@@ -55,7 +55,6 @@ export default function Prices() {
         width={1000}
         height={1000}
         alt="Ремонт авто"
-        // placeholder="blur"
         priority={true}
       />
       {scroll > maxScroll && <ButtonUp />}

@@ -11,7 +11,6 @@ export default function Home() {
         width={1000}
         height={1000}
         alt="Ремонт авто"
-        // placeholder="blur"
         priority={true}
       />
       <div className="main__container">

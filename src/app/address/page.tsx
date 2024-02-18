@@ -12,7 +12,6 @@ export default function Address() {
         width={1000}
         height={1000}
         alt="Ремонт авто"
-        // placeholder="blur"
         priority={true}
       />
       <div className="address">
