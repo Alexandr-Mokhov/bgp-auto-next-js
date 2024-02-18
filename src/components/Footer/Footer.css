@@ -8,7 +8,7 @@
   background-color: #000;
   height: 40px;
   flex-shrink: 0;
-  z-index: 2;
+  z-index: 0;
 }
 
 .footer__container {

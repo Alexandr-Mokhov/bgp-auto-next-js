@@ -1,6 +1,6 @@
 .popup {
   width: 100%;
-  height: calc(100vh - 78px);
+  height: calc(100vh - 80px);
   background: rgba(0, 0, 0, 0.9);
   position: fixed;
   top: 0;
@@ -65,15 +65,13 @@
 
 @media screen and (max-width: 600px) {
   .popup {
-    height: calc(100vh - 93px);
-    padding-top: 93px;
+    height: calc(100vh - 94px);
+    padding-top: 94px;
   }
 
   .popup__close {
     top: -36px;
     right: 0;
-    /* width: 20px;
-    height: 20px; */
   }
 }
 

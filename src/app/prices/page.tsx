@@ -6,7 +6,7 @@ import { useEffect, useRef } from 'react';
 import backgroundPrices from '@/../public/background-prices.jpg';
 import PriceTable from '@/components/PriceTable/PriceTable';
 import ButtonUp from '@/components/ButtonUp/ButtonUp';
-import useScroll from '@/utils/checkScroll';
+import useScroll from '@/utils/useScroll';
 import { prices } from '@/constants/prices';
 // import './prices.css';
 

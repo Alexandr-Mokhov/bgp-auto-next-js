@@ -5,3 +5,8 @@ export type ListType = {
 	title: string;
 	paragraph: string[]
 }
+
+export type CardDataType = {
+	isOpen: boolean,
+	cardData: ListType,
+}
