@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ListType, CardDataType } from '../../styles/types';
+import { ListType, CardDataType } from '../../types';
 import initialImage from '@/../public/back-img.png';
 
 
