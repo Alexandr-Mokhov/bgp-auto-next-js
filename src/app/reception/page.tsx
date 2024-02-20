@@ -1,5 +1,5 @@
 "use client"
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useContext, useEffect, useState } from 'react';
 import Image from 'next/image';
 import backgroundAboutAs from '../../../public/background-about-as.jpg';
 import './reception.css';
@@ -7,6 +7,7 @@ import Registration from '@/components/Registration/Registration';
 import Preloader from '@/components/Preloader/Preloader';
 import Form from '@/components/Form/Form';
 import { useFormWithValidation } from '../../utils/formValidator';
+import { ReceptionContext } from '@/components/Providers/ReceptionProvider';
 
 type LocalStorageType = {
   work: string,
@@ -25,23 +26,22 @@ export default function Reception() {
   const [dataFromLocalStorage, setDataFromLocalStorage] = useState<LocalStorageType>({} as LocalStorageType);
   const [currentDate, setCurrentDate] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [isInscribed, setIsInscribed] = useState(true);
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
+  const { isInscribed, setIsInscribed, date, setDate, time, setTime } = useContext(ReceptionContext);
+  const { work, auto, surname, name, phone }: LocalStorageType = dataFromLocalStorage!;
 
-  // "{"work":"Плановое ТО","auto":"Hyundai Solaris","date":"2024-02-21","time":"12:00","surname":"Мохов","name":"Александр","phone":"+79220186516","registeredDate":"2024-2-20","registrationDone":true}"
-  
-  const { work, auto, /*date, time,*/ surname, name, phone }: LocalStorageType = dataFromLocalStorage!;
-  
   useEffect(() => {
     const today = new Date();
-    setCurrentDate(`${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate() <= 9 ? `0${today.getDate()}` : today.getDate()}`);
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;
+    const day = today.getDate();
+
+    setCurrentDate(`${year}-${month <= 9 ? `0${month}` : month}-${day <= 9 ? `0${day}` : day}`);
   }, [])
 
   useEffect(() => {
     const localData = JSON.parse(localStorage.getItem('reception-BGP-AUTO') as string);
     console.log(localData);
-    
+
     if (localData) {
       const today = new Date().getTime();
       const { date, time, registrationDone } = localData;
@@ -67,8 +67,7 @@ export default function Reception() {
     } else {
       setIsInscribed(false);
     }
-  }, [])
-console.log(currentDate);
+  }, [setDate, setIsInscribed, setTime])
 
   function handleSubmit(evt: FormEvent<HTMLFormElement>) {
     setIsLoading(true);
@@ -156,8 +155,12 @@ console.log(currentDate);
           />}
         {isInscribed &&
           <div className="reception__button-contaiter">
-            <button className="reception__button reception__button_editing" type="button" onClick={handleEdit}>Редактировать запись</button>
-            <button className="reception__button reception__button_reset" type="button" onClick={handleReset}>Отменить запись</button>
+            <button className="reception__button reception__button_editing" type="button" onClick={handleEdit}>
+              Редактировать запись
+            </button>
+            <button className="reception__button reception__button_reset" type="button" onClick={handleReset}>
+              Отменить запись
+            </button>
           </div>}
       </div>
     </main>

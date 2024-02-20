@@ -1,16 +1,16 @@
 "use client"
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import headerLogo from "@/../public/header-three-gears.svg";
 import './Header.css';
 import Navigation from '../Navigation/Navigation';
+import { ReceptionContext } from '@/components/Providers/ReceptionProvider';
 
 export default function Header() {
-  const [isInscribed, setIsInscribed] = useState(false);
+ //** обдумать логику сброса рагистрации */
   const [dataFromLocalStorage, setDataFromLocalStorage] = useState({});
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
+  const { isInscribed, setIsInscribed, date, setDate, time, setTime } = useContext(ReceptionContext);
 
   useEffect(() => {
     const localData = JSON.parse(localStorage.getItem('reception-BGP-AUTO') as string);
@@ -37,7 +37,7 @@ export default function Header() {
         setTime('');
       }
     }
-  }, [])
+  }, [setDate, setIsInscribed, setTime])
 
   return (
     <header className="header">

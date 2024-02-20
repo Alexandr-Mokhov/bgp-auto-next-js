@@ -1,4 +1,4 @@
-import { ChangeEvent, ChangeEventHandler, FormEventHandler } from 'react';
+import { ChangeEventHandler, FormEventHandler } from 'react';
 import { StaticImageData } from 'next/image';
 
 export type ListType = {
