@@ -1,4 +1,5 @@
 "use client"
+import processEnv from 'next/config';
 import { FormEvent, useContext, useEffect, useState } from 'react';
 import Image from 'next/image';
 import backgroundAboutAs from '../../../public/background-about-as.jpg';
@@ -28,6 +29,8 @@ export default function Reception() {
   const [isLoading, setIsLoading] = useState(false);
   const { isInscribed, setIsInscribed, date, setDate, time, setTime } = useContext(ReceptionContext);
   const { work, auto, surname, name, phone }: LocalStorageType = dataFromLocalStorage!;
+  const NEXT_TOKEN = processEnv;
+  // const axios = require('axios');
 
   useEffect(() => {
     const today = new Date();
@@ -40,7 +43,6 @@ export default function Reception() {
 
   useEffect(() => {
     const localData = JSON.parse(localStorage.getItem('reception-BGP-AUTO') as string);
-    console.log(localData);
 
     if (localData) {
       const today = new Date().getTime();
@@ -83,6 +85,22 @@ export default function Reception() {
       registeredDate: currentDate,
       registrationDone: true
     }
+
+    const url = `https://api.telegram.org/bot${NEXT_TOKEN}/sendMessage`;
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(dataReception)
+    };
+
+    fetch(url, options)
+      .then(res => res.json())
+      .then(json => console.log(json))
+      .catch(err => console.error('Error:', err));
 
     localStorage.setItem('reception-BGP-AUTO', JSON.stringify(dataReception));
     console.log(dataReception);
