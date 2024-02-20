@@ -7,4 +7,3 @@ export default function SearchTable() {
  
   return table;
 }
-

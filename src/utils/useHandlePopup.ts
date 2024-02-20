@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { ListType, CardDataType } from '../../types';
 import initialImage from '@/../public/back-img.png';
@@ -34,7 +35,6 @@ export default function useHandlePopup() {
 				document.removeEventListener('keydown', closeByEscape);
 			}
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isOpen]);
 
 	useEffect(() => {
@@ -50,7 +50,6 @@ export default function useHandlePopup() {
 		return () => {
 			document.removeEventListener('mousedown', handleClickOverlay);
 		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isOpen]);
 
 	return { selectedCard, handleCardClick, closeAllPopups };

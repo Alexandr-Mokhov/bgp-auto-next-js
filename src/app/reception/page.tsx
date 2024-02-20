@@ -3,74 +3,84 @@ import { FormEvent, useEffect, useState } from 'react';
 import Image from 'next/image';
 import backgroundAboutAs from '../../../public/background-about-as.jpg';
 import './reception.css';
-// import { useFormWithValidation } from '../../utils/formValidator';
-// import Registration from '../../components/Registration/Registration';
-// import Preloader from '../../components/Preloader/Preloader';
-// import Form from '../../components/Form/Form';
+import Registration from '@/components/Registration/Registration';
+import Preloader from '@/components/Preloader/Preloader';
+import Form from '@/components/Form/Form';
+import { useFormWithValidation } from '../../utils/formValidator';
 
-export default function Reception(
-//   {
-//   setDate,
-//   setTime,
-//   isInscribed,
-//   setIsInscribed,
-//   dataFromLocalStorage,
-//   setDataFromLocalStorage
-//  }
- ) {
-  // const { values, handleChange, resetForm, errors, isValid } = useFormWithValidation();
-  const [dataFromLocalStorage, setDataFromLocalStorage] = useState({});
+type LocalStorageType = {
+  work: string,
+  auto: string,
+  surname: string,
+  name: string,
+  phone: string,
+  date: string,
+  time: string,
+  registeredDate: string,
+  registrationDone: boolean,
+}
+
+export default function Reception() {
+  const { values, handleChange, resetForm, errors, isValid } = useFormWithValidation();
+  const [dataFromLocalStorage, setDataFromLocalStorage] = useState<LocalStorageType>({} as LocalStorageType);
   const [currentDate, setCurrentDate] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isInscribed, setIsInscribed] = useState(true);
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
 
-  // const { work, auto, date, time, surname, name, phone } = dataFromLocalStorage;
-  // const [date, setDate] = useState('');
-  // const [time, setTime] = useState('');
-
+  // "{"work":"Плановое ТО","auto":"Hyundai Solaris","date":"2024-02-21","time":"12:00","surname":"Мохов","name":"Александр","phone":"+79220186516","registeredDate":"2024-2-20","registrationDone":true}"
+  
+  const { work, auto, /*date, time,*/ surname, name, phone }: LocalStorageType = dataFromLocalStorage!;
+  
   useEffect(() => {
     const today = new Date();
-    setCurrentDate(`${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate() <= 9 ? `0${ today.getDate()}` : today.getDate()}`);
+    setCurrentDate(`${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate() <= 9 ? `0${today.getDate()}` : today.getDate()}`);
   }, [])
 
-  //useEffect(() => {
-    // const localData = JSON.parse(localStorage.getItem('reception-BGP-AUTO'));
-  //   if (localData) {
-  //     const today = new Date().getTime();
-  //     const { date, time, registrationDone } = localData;
-  //     const registrationYear = Number(date.slice(0, 4));
-  //     const registrationMonth = Number(date.slice(5, 7)) - 1;
-  //     const registrationDay = Number(date.slice(8, 10));
-  //     const registrationHours = Number(time.slice(0, 2));
-  //     const registrationMinutes = Number(time.slice(3, 5));
-  //     const registrationDate = new Date(registrationYear, registrationMonth, registrationDay, registrationHours, registrationMinutes).getTime();
+  useEffect(() => {
+    const localData = JSON.parse(localStorage.getItem('reception-BGP-AUTO') as string);
+    console.log(localData);
+    
+    if (localData) {
+      const today = new Date().getTime();
+      const { date, time, registrationDone } = localData;
+      const registrationYear = Number(date.slice(0, 4));
+      const registrationMonth = Number(date.slice(5, 7)) - 1;
+      const registrationDay = Number(date.slice(8, 10));
+      const registrationHours = Number(time.slice(0, 2));
+      const registrationMinutes = Number(time.slice(3, 5));
+      const registrationDate = new Date(registrationYear, registrationMonth, registrationDay, registrationHours, registrationMinutes).getTime();
 
-  //     if (today < registrationDate) {
-  //       // setDataFromLocalStorage(localData);
-  //       // setDate(date);
-  //       // setTime(time);
-  //       setIsInscribed(registrationDone);
-  //     } else {
-  //       localStorage.removeItem('reception-BGP-AUTO');
-  //       setDataFromLocalStorage({});
-  //       setIsInscribed(false);
-  //       // setDate('');
-  //       // setTime('');
-  //     }
-  //   }
-  // }, [])
+      if (today < registrationDate) {
+        setDataFromLocalStorage(localData);
+        setDate(date);
+        setTime(time);
+        setIsInscribed(registrationDone);
+      } else {
+        localStorage.removeItem('reception-BGP-AUTO');
+        setDataFromLocalStorage({} as LocalStorageType);
+        setIsInscribed(false);
+        setDate('');
+        setTime('');
+      }
+    } else {
+      setIsInscribed(false);
+    }
+  }, [])
+console.log(currentDate);
 
   function handleSubmit(evt: FormEvent<HTMLFormElement>) {
     setIsLoading(true);
     evt.preventDefault();
     const dataReception = {
-      // work: values['work'] || work,
-      // auto: values['auto'] || auto,
-      // date: values['date'] || date,
-      // time: values['time'] || time,
-      // surname: values['surname'] || surname,
-      // name: values['name'] || name,
-      // phone: values['phone'] || phone,
+      work: values['work'] || work,
+      auto: values['auto'] || auto,
+      date: values['date'] || date,
+      time: values['time'] || time,
+      surname: values['surname'] || surname,
+      name: values['name'] || name,
+      phone: values['phone'] || phone,
       registeredDate: currentDate,
       registrationDone: true
     }
@@ -81,8 +91,8 @@ export default function Reception(
     return new Promise((resolve, reject) => {
       return resolve(setTimeout(() => {
         setDataFromLocalStorage(dataReception);
-        // setDate(dataReception.date);
-        // setTime(dataReception.time);
+        setDate(dataReception.date);
+        setTime(dataReception.time);
         setIsInscribed(true);
         setIsLoading(false);
       }, 3000));
@@ -98,12 +108,12 @@ export default function Reception(
     return new Promise((resolve, reject) => {
       return resolve(setTimeout(() => {
         localStorage.removeItem('reception-BGP-AUTO');
-        setDataFromLocalStorage({});
+        setDataFromLocalStorage({} as LocalStorageType);
         setIsInscribed(false);
         setIsLoading(false);
-        // resetForm();
-        // setDate('');
-        // setTime('');
+        resetForm();
+        setDate('');
+        setTime('');
       }, 2000));
     })
   }
@@ -118,19 +128,20 @@ export default function Reception(
         alt="Ремонт авто"
         priority={true}
       />
-      {/* {isLoading && <Preloader />} */}
+      {isLoading && <Preloader />}
       <div className="reception">
         <h1 className="reception__title">Запись на ремонт и техническое обслуживание</h1>
-        {/* {isInscribed ?
-          // <Registration
-          //   name={name}
-          //   date={date}
-          //   time={time}
-          //   work={work} /> :
+        {isInscribed ?
+          <Registration
+            name={name}
+            date={date}
+            time={time}
+            work={work}
+          /> :
           <Form
             handleSubmit={handleSubmit}
-            // handleChange={handleChange}
-            // values={values}
+            handleChange={handleChange}
+            values={values}
             work={work}
             auto={auto}
             date={date}
@@ -139,10 +150,10 @@ export default function Reception(
             name={name}
             phone={phone}
             currentDate={currentDate}
-            // errors={errors}
-            // isValid={isValid}
+            errors={errors}
+            isValid={isValid}
             isLoading={isLoading}
-          />} */}
+          />}
         {isInscribed &&
           <div className="reception__button-contaiter">
             <button className="reception__button reception__button_editing" type="button" onClick={handleEdit}>Редактировать запись</button>

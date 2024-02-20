@@ -1,0 +1,101 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+}
+
+.form__label {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+}
+
+.form__label:first-of-type {
+  margin-top: 5px;
+}
+
+.form__input {
+  margin: 0 0 0 50px;
+  font-size: 14px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  height: 24px;
+  padding: 0 8px;
+  box-sizing: border-box;
+  width: calc(100% - 50px);
+}
+
+.form__input::placeholder {
+  font-size: 14px;
+}
+
+.form__input_error {
+  border: 1px solid #E42A24;
+}
+
+.form__error {
+  font-size: 12px;
+  line-height: 15px;
+  min-height: 15px;
+  margin: 0 0 0 50px;
+  color: #E42A24;
+}
+
+.form__button {
+  width: 200px;
+  align-self: flex-start;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 900;
+  border-radius: 5px;
+  height: 34px;
+  text-align: center;
+  transition: all .5s ease;
+  will-change: transform;
+  cursor: pointer;
+  color: #000;
+  background: none;
+  margin: 20px 0 20px 50px;
+  align-self: center;
+}
+
+.form__button:hover {
+  transform: scale(1.05);
+  opacity: .9;
+}
+
+.form__button:disabled {
+  transform: scale(1);
+  opacity: .6;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 480px) {
+  .form {
+    width: max(calc(100% - 60px), 240px);
+  }
+
+  .form__label {
+    font-size: 12px;
+  }
+
+  .form__input {
+    margin: 0 0 0 30px;
+    font-size: 12px;
+  }
+
+  .form__input::placeholder {
+    font-size: 12px;
+  }
+
+  .form__error {
+    font-size: 10px;
+    margin: 0 0 0 30px;
+  }
+
+  .form__button {
+    width: 150px;
+    font-size: 12px;
+    height: 30px;
+    margin: 20px 0 20px 30px;
+  }
+}
