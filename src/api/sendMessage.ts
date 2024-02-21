@@ -1,7 +1,9 @@
 import { LocalStorageType } from '../../types';
 
-const token = process.env.NEXT_PUBLIC_TOKEN;
-const chatId = process.env.NEXT_PUBLIC_CHAT_ID;
+const token = process.env.NEXT_PRIVATE_TOKEN;
+const chatId = process.env.NEXT_PRIVATE_CHAT_ID;
+console.log(token, chatId);
+
 const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
 function createMessageText(obj: LocalStorageType, active: boolean): string {
