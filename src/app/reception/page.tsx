@@ -1,5 +1,5 @@
 "use client"
-import processEnv from 'next/config';
+const token = process.env.NEXT_PUBLIC_TOKEN;
 import { FormEvent, useContext, useEffect, useState } from 'react';
 import Image from 'next/image';
 import backgroundAboutAs from '../../../public/background-about-as.jpg';
@@ -29,8 +29,6 @@ export default function Reception() {
   const [isLoading, setIsLoading] = useState(false);
   const { isInscribed, setIsInscribed, date, setDate, time, setTime } = useContext(ReceptionContext);
   const { work, auto, surname, name, phone }: LocalStorageType = dataFromLocalStorage!;
-  const NEXT_TOKEN = processEnv;
-  // const axios = require('axios');
 
   useEffect(() => {
     const today = new Date();
@@ -86,21 +84,39 @@ export default function Reception() {
       registrationDone: true
     }
 
-    const url = `https://api.telegram.org/bot${NEXT_TOKEN}/sendMessage`;
+    const url = `https://api.telegram.org/bot${token}/sendMessage`;
+    const chatId = '1055912893';
 
-    const options = {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(dataReception)
-    };
+    function createMessageText(obj: LocalStorageType): string {
+      let message = '';
+      for (let key in obj) {
+        message += `<b>${key}:</b> ${obj[key as keyof LocalStorageType]}\n`
+      }
+      return encodeURI(message);
+    }
 
-    fetch(url, options)
-      .then(res => res.json())
-      .then(json => console.log(json))
-      .catch(err => console.error('Error:', err));
+    const sendMessage = async (id: string) => {
+      const response = await fetch(`${url}?chat_id=${id}&text=${createMessageText(dataReception)}&parse_mode=html`);
+    }
+
+    // function createMessageText() {
+    //   let fields = [
+    //     '<b>Вид работ:</b> ' + dataReception.work,
+    //     '<b>Автомобиль:</b> ' + dataReception.auto,
+    //     '<b>Дата работ:</b> ' + dataReception.date,
+    //     '<b>Время:</b> ' + dataReception.time,
+    //     '<b>Фамилия:</b> ' + dataReception.surname,
+    //     '<b>Имя:</b> ' + dataReception.name,
+    //     '<b>Телефон:</b> ' + dataReception.phone,
+    //     '<b>Дата заявки:</b> ' + dataReception.registeredDate,
+    //     `<b>Статус:</b> ${dataReception.registrationDone ? 'активна' : 'закрыта'}`,
+    //   ]
+    //   let message = '';
+    //   fields.forEach(field => message += field + '\n');
+    //   return encodeURI(message);
+    // }
+
+    sendMessage(chatId);
 
     localStorage.setItem('reception-BGP-AUTO', JSON.stringify(dataReception));
     console.log(dataReception);
