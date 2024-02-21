@@ -1,5 +1,4 @@
 "use client"
-const token = process.env.NEXT_PUBLIC_TOKEN;
 import { FormEvent, useContext, useEffect, useState } from 'react';
 import Image from 'next/image';
 import backgroundAboutAs from '../../../public/background-about-as.jpg';
@@ -9,18 +8,8 @@ import Preloader from '@/components/Preloader/Preloader';
 import Form from '@/components/Form/Form';
 import { useFormWithValidation } from '../../utils/formValidator';
 import { ReceptionContext } from '@/components/Providers/ReceptionProvider';
-
-type LocalStorageType = {
-  work: string,
-  auto: string,
-  surname: string,
-  name: string,
-  phone: string,
-  date: string,
-  time: string,
-  registeredDate: string,
-  registrationDone: boolean,
-}
+import { LocalStorageType } from '../../../types';
+import sendMessage from '@/api/sendMessage';
 
 export default function Reception() {
   const { values, handleChange, resetForm, errors, isValid } = useFormWithValidation();
@@ -39,8 +28,12 @@ export default function Reception() {
     setCurrentDate(`${year}-${month <= 9 ? `0${month}` : month}-${day <= 9 ? `0${day}` : day}`);
   }, [])
 
+  function getLocalStorageData() {
+    return JSON.parse(localStorage.getItem('reception-BGP-AUTO') as string);
+  }
+
   useEffect(() => {
-    const localData = JSON.parse(localStorage.getItem('reception-BGP-AUTO') as string);
+    const localData = getLocalStorageData();
 
     if (localData) {
       const today = new Date().getTime();
@@ -69,9 +62,29 @@ export default function Reception() {
     }
   }, [setDate, setIsInscribed, setTime])
 
+  function sendMessageOk(data: LocalStorageType, isActive: boolean) {
+    sendMessage(data, isActive)
+      .then(res => {
+        if (res.ok) {
+          localStorage.removeItem('reception-BGP-AUTO');
+          localStorage.setItem('reception-BGP-AUTO', JSON.stringify(data));
+          setDataFromLocalStorage(data);
+          setDate(data.date);
+          setTime(data.time);
+          setIsInscribed(true);
+        }
+      })
+      .catch(err => {
+        console.log(err);
+        alert(err)
+      })
+      .finally(() => setIsLoading(false));
+  }
+
   function handleSubmit(evt: FormEvent<HTMLFormElement>) {
     setIsLoading(true);
     evt.preventDefault();
+    const localData = getLocalStorageData();
     const dataReception = {
       work: values['work'] || work,
       auto: values['auto'] || auto,
@@ -84,71 +97,46 @@ export default function Reception() {
       registrationDone: true
     }
 
-    const url = `https://api.telegram.org/bot${token}/sendMessage`;
-    const chatId = '1055912893';
-
-    function createMessageText(obj: LocalStorageType): string {
-      let message = '';
-      for (let key in obj) {
-        message += `<b>${key}:</b> ${obj[key as keyof LocalStorageType]}\n`
-      }
-      return encodeURI(message);
+    if (localData) {
+      sendMessage(localData, false)
+        .then((res) => {
+          if (res.ok) {
+            sendMessageOk(dataReception, true);
+          }
+        })
+        .catch(err => {
+          console.log(err);
+          alert(err)
+        })
+        .finally(() => setIsLoading(false));
+    } else {
+      sendMessageOk(dataReception, true);
     }
-
-    const sendMessage = async (id: string) => {
-      const response = await fetch(`${url}?chat_id=${id}&text=${createMessageText(dataReception)}&parse_mode=html`);
-    }
-
-    // function createMessageText() {
-    //   let fields = [
-    //     '<b>Вид работ:</b> ' + dataReception.work,
-    //     '<b>Автомобиль:</b> ' + dataReception.auto,
-    //     '<b>Дата работ:</b> ' + dataReception.date,
-    //     '<b>Время:</b> ' + dataReception.time,
-    //     '<b>Фамилия:</b> ' + dataReception.surname,
-    //     '<b>Имя:</b> ' + dataReception.name,
-    //     '<b>Телефон:</b> ' + dataReception.phone,
-    //     '<b>Дата заявки:</b> ' + dataReception.registeredDate,
-    //     `<b>Статус:</b> ${dataReception.registrationDone ? 'активна' : 'закрыта'}`,
-    //   ]
-    //   let message = '';
-    //   fields.forEach(field => message += field + '\n');
-    //   return encodeURI(message);
-    // }
-
-    sendMessage(chatId);
-
-    localStorage.setItem('reception-BGP-AUTO', JSON.stringify(dataReception));
-    console.log(dataReception);
-
-    return new Promise((resolve, reject) => {
-      return resolve(setTimeout(() => {
-        setDataFromLocalStorage(dataReception);
-        setDate(dataReception.date);
-        setTime(dataReception.time);
-        setIsInscribed(true);
-        setIsLoading(false);
-      }, 3000));
-    })
   }
 
   function handleEdit() {
-    setIsInscribed(!isInscribed);
+    setIsInscribed(false);
   }
 
   function handleReset() {
     setIsLoading(true);
-    return new Promise((resolve, reject) => {
-      return resolve(setTimeout(() => {
-        localStorage.removeItem('reception-BGP-AUTO');
-        setDataFromLocalStorage({} as LocalStorageType);
-        setIsInscribed(false);
-        setIsLoading(false);
-        resetForm();
-        setDate('');
-        setTime('');
-      }, 2000));
-    })
+    const localData = getLocalStorageData();
+    sendMessage(localData, false)
+      .then(res => {
+        if (res.ok) {
+          localStorage.removeItem('reception-BGP-AUTO');
+          setDataFromLocalStorage({} as LocalStorageType);
+          setIsInscribed(false);
+          resetForm();
+          setDate('');
+          setTime('');
+        }
+      })
+      .catch(err => {
+        console.log(err);
+        alert(err)
+      })
+      .finally(() => setIsLoading(false));
   }
 
   return (

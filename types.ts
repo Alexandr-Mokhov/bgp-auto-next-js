@@ -31,3 +31,15 @@ export type FormPropsType = RegistrationPropsType & {
 	isValid: boolean,
 	isLoading: boolean,
 }
+
+export type LocalStorageType = {
+  work: string,
+  auto: string,
+  surname: string,
+  name: string,
+  phone: string,
+  date: string,
+  time: string,
+  registeredDate: string,
+  registrationDone: boolean,
+}
