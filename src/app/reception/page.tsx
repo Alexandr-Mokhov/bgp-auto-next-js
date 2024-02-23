@@ -8,8 +8,7 @@ import Preloader from '@/components/Preloader/Preloader';
 import Form from '@/components/Form/Form';
 import { useFormWithValidation } from '../../utils/formValidator';
 import { ReceptionContext } from '@/components/Providers/ReceptionProvider';
-import { LocalStorageType } from '../../../types';
-import sendMessage from '@/api/sendMessage';
+import { LocalStorageType } from '../../types';
 
 export default function Reception() {
   const { values, handleChange, resetForm, errors, isValid } = useFormWithValidation();
@@ -62,8 +61,12 @@ export default function Reception() {
     }
   }, [setDate, setIsInscribed, setTime])
 
-  function sendMessageOk(data: LocalStorageType, isActive: boolean) {
-    sendMessage(data, isActive)
+  function sendMessagePost(data: LocalStorageType) {
+    fetch('/api', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
       .then(res => {
         if (res.ok) {
           localStorage.removeItem('reception-BGP-AUTO');
@@ -79,6 +82,14 @@ export default function Reception() {
         alert(err)
       })
       .finally(() => setIsLoading(false));
+  }
+
+  function sendMessagePut(data: LocalStorageType): Promise<Response> {
+    return fetch('/api', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
   }
 
   function handleSubmit(evt: FormEvent<HTMLFormElement>) {
@@ -98,10 +109,10 @@ export default function Reception() {
     }
 
     if (localData) {
-      sendMessage(localData, false)
+      sendMessagePut(localData)
         .then((res) => {
           if (res.ok) {
-            sendMessageOk(dataReception, true);
+            sendMessagePost(dataReception);
           }
         })
         .catch(err => {
@@ -110,7 +121,7 @@ export default function Reception() {
         })
         .finally(() => setIsLoading(false));
     } else {
-      sendMessageOk(dataReception, true);
+      sendMessagePost(dataReception);
     }
   }
 
@@ -121,7 +132,7 @@ export default function Reception() {
   function handleReset() {
     setIsLoading(true);
     const localData = getLocalStorageData();
-    sendMessage(localData, false)
+    sendMessagePut(localData)
       .then(res => {
         if (res.ok) {
           localStorage.removeItem('reception-BGP-AUTO');
@@ -147,7 +158,7 @@ export default function Reception() {
         width={1000}
         height={1000}
         alt="Ремонт авто"
-        priority={true}
+        placeholder="blur"
       />
       {isLoading && <Preloader />}
       <div className="reception">

@@ -14,7 +14,7 @@ export default function About() {
         width={1000}
         height={1000}
         alt="Ремонт авто"
-        priority={true}
+        placeholder="blur"
       />
       <div className="about-as">
         <h1 className="about-as__title">Добро пожаловать в автосервис BGP&nbsp;AUTO!</h1>

@@ -1,5 +1,5 @@
 import './Registration.css';
-import { RegistrationPropsType } from '../../../types';
+import { RegistrationPropsType } from '../../types';
 
 export default function Registration({ name, date, time, work }: RegistrationPropsType) {
   return (

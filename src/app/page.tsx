@@ -1,6 +1,6 @@
 import Image from "next/image";
 import backgroundMain from "../../public/background-main.jpg"
-import "./page.css";
+import "../styles/home.css";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
         width={1000}
         height={1000}
         alt="Ремонт авто"
-        priority={true}
+        placeholder="blur"
       />
       <div className="main__container">
         <div className="main__title-container">

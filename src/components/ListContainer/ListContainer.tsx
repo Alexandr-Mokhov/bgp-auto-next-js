@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import './ListContainer.css';
-import { ListType } from '../../../types';
+import { ListType } from '../../types';
 
 export default function ListContainer({ list, onCardClick }: { list: ListType[], onCardClick: Function }) {
   function createElementList() {

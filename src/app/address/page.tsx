@@ -12,7 +12,7 @@ export default function Address() {
         width={1000}
         height={1000}
         alt="Ремонт авто"
-        priority={true}
+        placeholder="blur"
       />
       <div className="address">
         <h1 className="address__title">Будем рады видеть Вас!</h1>

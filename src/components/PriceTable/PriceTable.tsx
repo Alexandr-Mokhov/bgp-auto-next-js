@@ -23,6 +23,7 @@ export default function PriceTable({ blocks, blockName, title, listItems }: Prop
   return (
     <div className="prices__type-work">
       <h2 className="prices__title" ref={blocks[blockName]}>{title}</h2>
+      {/* <h2 className="prices__title" id={blockName}>{title}</h2> //** **/} 
       <ul className="prices__table">
         <li className="prices__table-name prices__table-name_head">
           Наименование работ&nbsp;

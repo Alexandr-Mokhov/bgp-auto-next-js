@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import backgroundServices from '../../public/background-services.jpg';
+import '../styles/not-found.css';
 
 export default function NotFound() {
   return (
@@ -11,7 +12,7 @@ export default function NotFound() {
         width={1000}
         height={1000}
         alt="Ремонт авто"
-        priority={true}
+        placeholder="blur"
       />
       <section className="not-found__container">
         <div className="not-found__container-text">

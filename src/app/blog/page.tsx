@@ -21,7 +21,7 @@ export default function Blog() {
 				width={1000}
 				height={1000}
 				alt="Ремонт авто"
-				priority={true}
+				placeholder="blur"
 			/>
 			{scroll > maxScroll && <ButtonUp />}
 			<ListContainer list={posts} onCardClick={handleCardClick} />

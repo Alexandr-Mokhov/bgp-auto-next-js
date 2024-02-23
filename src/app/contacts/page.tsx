@@ -30,7 +30,7 @@ export default function Contacts() {
         width={1000}
         height={1000}
         alt="Ремонт авто"
-        priority={true}
+        placeholder="blur"
       />
       <div className="contacts">
         <h1 className="contacts__title">Свяжитесь с нами по интересующим Вас вопросам</h1>

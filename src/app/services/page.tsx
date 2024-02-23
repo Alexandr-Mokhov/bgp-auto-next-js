@@ -23,7 +23,7 @@ export default function Services() {
 				width={1000}
         height={1000}
 				alt="Ремонт авто"
-				priority={true}
+				placeholder="blur"
 			/>
 			<div className="services">
 				<section className="services__grid">

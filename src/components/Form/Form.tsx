@@ -1,5 +1,5 @@
 import './Form.css';
-import { FormPropsType } from '../../../types';
+import { FormPropsType } from '../../types';
 
 export default function Form({
   handleSubmit,

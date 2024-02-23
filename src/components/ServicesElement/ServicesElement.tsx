@@ -11,6 +11,7 @@ type PropsType = {
 export default function ServicesElement({ path, srcImage, elementTitle }: PropsType) {
   return (
     <Link className="services__grid-item" href={{ pathname: '/prices', query: { table: `${path}` } }} >
+    {/* <Link className="services__grid-item" href={`/prices#${path}`} > //** * */}
       <Image
         className="services__grid-img"
         src={srcImage}
