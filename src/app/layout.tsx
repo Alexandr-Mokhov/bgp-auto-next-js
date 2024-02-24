@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { ReceptionProvider } from '../components/Providers/ReceptionProvider';
+import { Analytics } from "@vercel/analytics/react";
 
 const font = localFont({
   src: [
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <ReceptionProvider>
           <Header />
           {children}
+          <Analytics />
         </ReceptionProvider>
         <Footer />
       </body>
