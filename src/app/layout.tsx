@@ -5,6 +5,7 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { ReceptionProvider } from '../components/Providers/ReceptionProvider';
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const font = localFont({
   src: [
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Header />
           {children}
           <Analytics />
+          <SpeedInsights />
         </ReceptionProvider>
         <Footer />
       </body>
