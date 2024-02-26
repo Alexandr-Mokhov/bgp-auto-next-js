@@ -231,7 +231,6 @@
     border-bottom: none;
     border-right: none;
     padding: 0 10px 0 20px;
-    width: 220px;
   }
 
   .header__subtitle {
@@ -271,7 +270,8 @@
   }
 
   .header__logo-container {
-    width: 200px;
+    justify-content: space-between;
+    width: calc(100% / 2 + 50px);
     padding: 0 0 0 20px;
   }
 

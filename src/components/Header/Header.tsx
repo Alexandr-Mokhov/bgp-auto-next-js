@@ -52,7 +52,7 @@ export default function Header() {
             priority={true}
           />
           <div className="header__title-container">
-            <p className="header__title">BGP AUTO</p>
+            <p className="header__title">BGP&nbsp;AUTO</p>
             <p className="header__subtitle">AUTOWERKSTATT</p>
           </div>
         </Link>
