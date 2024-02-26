@@ -4,25 +4,27 @@ const token = process.env.NEXT_PRIVATE_TOKEN;
 const chatId = process.env.NEXT_PRIVATE_CHAT_ID;
 const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
-export function POST(request: Request) {
-  return requestHandle(request, true);
+export function POST(request: Request): Promise<Response> {
+  return requestHandle(request, true) as Promise<Response>;
 }
 
-export function PUT(request: Request) {
-  return requestHandle(request, false);
+export function PUT(request: Request): Promise<Response> {
+  return requestHandle(request, false) as Promise<Response>;
 }
 
 async function requestHandle(req: Request, active: boolean) {
   const data = await req.json();
-  sendMessage(data as unknown as LocalStorageType, active);
-  return new Response('Request ok', {
-    status: 200,
-    headers: {
-      'Access-Control-Allow-Origin': 'http://localhost:3000/api, https://bgp-auto.vercel.app/api',
-      'Access-Control-Allow-Methods': 'POST, PUT',
-      'Access-Control-Allow-Headers': 'Content-Type',
-    },
-  });
+  try {
+    const res = await sendMessage(data, active);
+    if (res.status === 200) {      
+      return new Response('Request Ok', { status: res.status });
+    } else {
+      throw new Response('Bad Request', { status: res.status });
+    }
+  } catch (err) {
+    console.log(err);
+    return err;
+  }
 }
 
 async function sendMessage(data: LocalStorageType, active: boolean) {

@@ -67,7 +67,7 @@ export default function Reception() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     })
-      .then(res => {
+      .then(res => {        
         if (res.ok) {
           localStorage.removeItem('reception-BGP-AUTO');
           localStorage.setItem('reception-BGP-AUTO', JSON.stringify(data));
@@ -75,11 +75,13 @@ export default function Reception() {
           setDate(data.date);
           setTime(data.time);
           setIsInscribed(true);
+        } else {
+          throw new Error('Ошибка записи на сервис, попробуйте позже');
         }
       })
       .catch(err => {
         console.log(err);
-        alert(err)
+        alert(err);
       })
       .finally(() => setIsLoading(false));
   }
@@ -113,11 +115,13 @@ export default function Reception() {
         .then((res) => {
           if (res.ok) {
             sendMessagePost(dataReception);
+          } else {
+            throw new Error('Ошибка изменения записи на сервис, попробуйте позже');
           }
         })
         .catch(err => {
           console.log(err);
-          alert(err)
+          alert(err);
         })
         .finally(() => setIsLoading(false));
     } else {
@@ -145,7 +149,7 @@ export default function Reception() {
       })
       .catch(err => {
         console.log(err);
-        alert(err)
+        alert(err);
       })
       .finally(() => setIsLoading(false));
   }
