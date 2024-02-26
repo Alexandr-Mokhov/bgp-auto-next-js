@@ -35,7 +35,7 @@ body {
   align-items: center;
   position: relative;
   z-index: 1;
-  padding-top: 78px;
+  padding-top: 80px;
   flex: 1;
 }
 
@@ -46,14 +46,4 @@ body {
   position: absolute;
   z-index: -1;
   object-fit: cover;
-}
-
-@media screen and (max-width: 600px) {
-  .main {
-    padding-top: 93px;
-  }
-
-  .background {
-    height: calc(100% - 93px);
-  }
 }
