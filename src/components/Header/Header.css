@@ -88,16 +88,14 @@
 }
 
 .header__reception-text {
-  margin: 4px 0;
+  margin: 5px 0;
   font-size: 14px;
-}
-
-.header__reception-text:first-of-type {
-  margin: 5px 0 0;
+  line-height: 16px;
 }
 
 .header__reception-data {
   letter-spacing: 2px;
+  margin: 5px 0 4px;
 }
 
 .header__reception-icon {
@@ -141,6 +139,7 @@
 .header__address-name {
   margin: 5px 0 0;
   font-size: 14px;
+  line-height: 16px;
 }
 
 .header__address-viewing {
@@ -149,6 +148,7 @@
   color: #E42A24;
   font-size: 14px;
   font-weight: 900;
+  line-height: 16px;
   letter-spacing: 2px;
 }
 
@@ -176,14 +176,12 @@
   }
 
   .header__address-name {
-    font-size: 12px;
-    margin: 4px 0 0;
+    margin: 0;
   }
 
   .header__address-viewing {
-    font-size: 12px;
     letter-spacing: 2px;
-    margin: 2px 0;
+    margin: 0 1px;
   }
 
   .header__address-logo {
@@ -197,7 +195,6 @@
   .header__reception {
     min-height: 40px;
     margin: 0 0 0 20px;
-    font-size: 12px;
   }
 
   .header__reception-container {
@@ -205,11 +202,6 @@
   }
 
   .header__reception-text {
-    font-size: 12px;
-    margin-bottom: 0;
-  }
-
-  .header__reception-text:first-of-type {
     margin: 0;
   }
 
@@ -260,7 +252,7 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 520px) {
   .header__logo-container {
     justify-content: space-between;
     width: calc(100% / 2 + 50px);

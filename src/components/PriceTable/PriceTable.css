@@ -55,7 +55,6 @@
 @media screen and (max-width: 480px) {
   .prices__table-name {
     grid-template-columns: 3fr 1fr;
-    font-size: 12px;
     padding: 8px 5px 2px;
   }
 }

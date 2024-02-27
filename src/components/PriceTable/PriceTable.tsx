@@ -27,7 +27,7 @@ export default function PriceTable({ blocks, blockName, title, listItems }: Prop
       <ul className="prices__table">
         <li className="prices__table-name prices__table-name_head">
           Наименование работ&nbsp;
-          <span className="prices__head-price">Стоимость, ₽</span>
+          <span>Стоимость,&nbsp;₽</span>
         </li>
         {createListItem()}
         <li className="prices__table-name">

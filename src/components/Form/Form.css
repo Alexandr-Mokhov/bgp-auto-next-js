@@ -33,7 +33,7 @@
 }
 
 .form__error {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 15px;
   min-height: 15px;
   margin: 0 0 0 50px;
@@ -74,28 +74,17 @@
     width: max(calc(100% - 60px), 240px);
   }
 
-  .form__label {
-    font-size: 12px;
-  }
-
   .form__input {
     margin: 0 0 0 30px;
-    font-size: 12px;
-  }
-
-  .form__input::placeholder {
-    font-size: 12px;
+    height: 34px;
   }
 
   .form__error {
-    font-size: 10px;
     margin: 0 0 0 30px;
   }
 
   .form__button {
-    width: 150px;
-    font-size: 12px;
     height: 30px;
-    margin: 20px 0 20px 30px;
+    margin: 20px 0 20px 10px;
   }
 }

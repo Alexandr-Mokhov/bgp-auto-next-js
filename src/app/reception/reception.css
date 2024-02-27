@@ -55,22 +55,8 @@
 @media screen and (max-width: 480px) {
   .reception__title {
     font-size: 20px;
-    margin: 15px 20px;
   }
 
-  .reception__button {
-    width: 160px;
-    align-self: flex-start;
-    font-size: 12px;
-    border-radius: 5px;
-    height: 30px;
-    text-align: center;
-    align-self: center;
-    margin: 10px 10px;
-  }
-}
-
-@media screen and (max-width: 380px) {
   .reception__button-contaiter {
     display: flex;
     flex-direction: column;
