@@ -16,7 +16,8 @@ export default function Reception() {
   const [currentDate, setCurrentDate] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const { isInscribed, setIsInscribed, date, setDate, time, setTime } = useContext(ReceptionContext);
-  const { work, auto, surname, name, phone }: LocalStorageType = dataFromLocalStorage!;
+  const { work, name }: LocalStorageType = dataFromLocalStorage;
+console.log(dataFromLocalStorage);
 
   useEffect(() => {
     const today = new Date();
@@ -176,7 +177,7 @@ export default function Reception() {
       {isLoading && <Preloader />}
       <div className="reception">
         <h1 className="reception__title">Запись на ремонт и техническое обслуживание</h1>
-        {!isInscribed &&
+        {!isInscribed && !dataFromLocalStorage.registrationDone &&
           <p className="reception__subtitle">
             Оставьте заявку и мы свяжемся с&nbsp;вами в&nbsp;течении 15&nbsp;минут
           </p>}

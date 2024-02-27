@@ -17,7 +17,7 @@ export default function Form({
         name="work"
         id="work"
         onChange={handleChange}
-        value={values['work']}
+        value={values['work'] || ''}
         required>
         <option value="">-</option>
         <option value="Плановое ТО">Плановое ТО</option>
@@ -36,7 +36,7 @@ export default function Form({
         id="auto"
         placeholder="Введите название марки"
         onChange={handleChange}
-        value={values['auto']}
+        value={values['auto'] || ''}
         minLength={2}
         required />
       <span className="form__error">{errors['auto']}</span>
@@ -47,7 +47,7 @@ export default function Form({
         id="date"
         min={currentDate}
         onChange={handleChange}
-        value={values['date']}
+        value={values['date'] || ''}
         required />
       <span className="form__error">{errors['date']}</span>
       <label className="form__label" htmlFor="time">Выберите время</label>
@@ -59,7 +59,7 @@ export default function Form({
         max="18:00"
         step={1800}
         onChange={handleChange}
-        value={values['time']}
+        value={values['time'] || ''}
         required />
       <span className="form__error">{errors['time']}</span>
       <label className="form__label" htmlFor="surname">Ваша фамилия</label>
@@ -69,7 +69,7 @@ export default function Form({
         id="surname"
         placeholder="Введите вашу фамилию"
         onChange={handleChange}
-        value={values['surname']}
+        value={values['surname'] || ''}
         minLength={2}
         required />
       <span className="form__error">{errors['surname']}</span>
@@ -82,7 +82,7 @@ export default function Form({
         minLength={2}
         maxLength={50}
         onChange={handleChange}
-        value={values['name']}
+        value={values['name'] || ''}
         required />
       <span className="form__error">{errors['name']}</span>
       <label className="form__label" htmlFor="phone">Ваш телефон</label>
