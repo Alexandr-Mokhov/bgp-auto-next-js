@@ -167,6 +167,7 @@ export default function Reception() {
       {isLoading && <Preloader />}
       <div className="reception">
         <h1 className="reception__title">Запись на ремонт и техническое обслуживание</h1>
+        <p className="reception__subtitle">Оставьте заявку и мы свяжемся с&nbsp;вами в&nbsp;течении 15&nbsp;минут</p>
         {isInscribed ?
           <Registration
             name={name}
