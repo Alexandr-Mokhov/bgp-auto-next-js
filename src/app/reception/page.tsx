@@ -36,13 +36,21 @@ export default function Reception() {
 
     if (localData) {
       const today = new Date().getTime();
-      const { date, time, registrationDone } = localData;
+      const { work, auto, date, time, surname, name, phone, registrationDone } = localData;
       const registrationYear = Number(date.slice(0, 4));
       const registrationMonth = Number(date.slice(5, 7)) - 1;
       const registrationDay = Number(date.slice(8, 10));
       const registrationHours = Number(time.slice(0, 2));
       const registrationMinutes = Number(time.slice(3, 5));
       const registrationDate = new Date(registrationYear, registrationMonth, registrationDay, registrationHours, registrationMinutes).getTime();
+
+      values['work'] = work;
+      values['auto'] = auto;
+      values['date'] = date;
+      values['time'] = time;
+      values['surname'] = surname;
+      values['name'] = name;
+      values['phone'] = phone;
 
       if (today < registrationDate) {
         setDataFromLocalStorage(localData);
@@ -59,6 +67,7 @@ export default function Reception() {
     } else {
       setIsInscribed(false);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setDate, setIsInscribed, setTime])
 
   function sendMessagePost(data: LocalStorageType) {
@@ -67,7 +76,7 @@ export default function Reception() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     })
-      .then(res => {        
+      .then(res => {
         if (res.ok) {
           localStorage.removeItem('reception-BGP-AUTO');
           localStorage.setItem('reception-BGP-AUTO', JSON.stringify(data));
@@ -99,13 +108,13 @@ export default function Reception() {
     evt.preventDefault();
     const localData = getLocalStorageData();
     const dataReception = {
-      work: values['work'] || work,
-      auto: values['auto'] || auto,
-      date: values['date'] || date,
-      time: values['time'] || time,
-      surname: values['surname'] || surname,
-      name: values['name'] || name,
-      phone: values['phone'] || phone,
+      work: values['work'],
+      auto: values['auto'],
+      date: values['date'],
+      time: values['time'],
+      surname: values['surname'],
+      name: values['name'],
+      phone: values['phone'],
       registeredDate: currentDate,
       registrationDone: true
     }
@@ -167,7 +176,10 @@ export default function Reception() {
       {isLoading && <Preloader />}
       <div className="reception">
         <h1 className="reception__title">Запись на ремонт и техническое обслуживание</h1>
-        <p className="reception__subtitle">Оставьте заявку и мы свяжемся с&nbsp;вами в&nbsp;течении 15&nbsp;минут</p>
+        {!isInscribed &&
+          <p className="reception__subtitle">
+            Оставьте заявку и мы свяжемся с&nbsp;вами в&nbsp;течении 15&nbsp;минут
+          </p>}
         {isInscribed ?
           <Registration
             name={name}
@@ -179,13 +191,6 @@ export default function Reception() {
             handleSubmit={handleSubmit}
             handleChange={handleChange}
             values={values}
-            work={work}
-            auto={auto}
-            date={date}
-            time={time}
-            surname={surname}
-            name={name}
-            phone={phone}
             currentDate={currentDate}
             errors={errors}
             isValid={isValid}

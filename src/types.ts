@@ -19,13 +19,10 @@ export type RegistrationPropsType = {
 	work: string,
 }
 
-export type FormPropsType = RegistrationPropsType & {
+export type FormPropsType = {
 	handleSubmit: FormEventHandler<HTMLFormElement>,
 	handleChange: ChangeEventHandler<HTMLInputElement | HTMLSelectElement>,
 	values: { [key: string]: string },
-	auto: string,
-	surname: string,
-	phone: string,
 	currentDate: string,
 	errors: { [key: string]: string },
 	isValid: boolean,

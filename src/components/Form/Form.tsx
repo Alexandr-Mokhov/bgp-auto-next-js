@@ -5,13 +5,6 @@ export default function Form({
   handleSubmit,
   handleChange,
   values,
-  work,
-  auto,
-  date,
-  time,
-  surname,
-  name,
-  phone,
   currentDate,
   errors,
   isValid,
@@ -24,7 +17,7 @@ export default function Form({
         name="work"
         id="work"
         onChange={handleChange}
-        value={values['work'] || work || ''}
+        value={values['work']}
         required>
         <option value="">-</option>
         <option value="Плановое ТО">Плановое ТО</option>
@@ -43,7 +36,7 @@ export default function Form({
         id="auto"
         placeholder="Введите название марки"
         onChange={handleChange}
-        value={values['auto'] || auto || ''}
+        value={values['auto']}
         minLength={2}
         required />
       <span className="form__error">{errors['auto']}</span>
@@ -54,7 +47,7 @@ export default function Form({
         id="date"
         min={currentDate}
         onChange={handleChange}
-        value={values['date'] || date || ''}
+        value={values['date']}
         required />
       <span className="form__error">{errors['date']}</span>
       <label className="form__label" htmlFor="time">Выберите время</label>
@@ -66,7 +59,7 @@ export default function Form({
         max="18:00"
         step={1800}
         onChange={handleChange}
-        value={values['time'] || time || ''}
+        value={values['time']}
         required />
       <span className="form__error">{errors['time']}</span>
       <label className="form__label" htmlFor="surname">Ваша фамилия</label>
@@ -76,7 +69,7 @@ export default function Form({
         id="surname"
         placeholder="Введите вашу фамилию"
         onChange={handleChange}
-        value={values['surname'] || surname || ''}
+        value={values['surname']}
         minLength={2}
         required />
       <span className="form__error">{errors['surname']}</span>
@@ -89,7 +82,7 @@ export default function Form({
         minLength={2}
         maxLength={50}
         onChange={handleChange}
-        value={values['name'] || name || ''}
+        value={values['name']}
         required />
       <span className="form__error">{errors['name']}</span>
       <label className="form__label" htmlFor="phone">Ваш телефон</label>
@@ -99,7 +92,9 @@ export default function Form({
         id="phone"
         placeholder="Введите ваш телефон"
         onChange={handleChange}
-        value={values['phone'] || phone || ''}
+        value={values['phone'] || '+7'}
+        minLength={12}
+        maxLength={12}
         required />
       <span className="form__error">{errors['phone']}</span>
       <button className="form__button" type="submit" disabled={isLoading || !isValid}>{isLoading ? 'Запись' : 'Записаться'}</button>

@@ -10,6 +10,7 @@
   height: 100px;
   background-repeat: no-repeat;
   background-size: contain;
+  margin-top: 10px;
 }
 
 .registration__title {
