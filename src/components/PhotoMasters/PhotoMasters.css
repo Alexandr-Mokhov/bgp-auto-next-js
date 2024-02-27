@@ -11,3 +11,10 @@
     height: 150px;
   }
 }
+
+@media screen and (max-width: 540px) {
+  .photo {
+    width: 200px;
+    height: 200px;
+  }
+}

@@ -51,7 +51,6 @@
   font-weight: 900;
   text-align: center;
   margin: 0;
-  padding: 10px 0 0;
   color: #E42A24;
 }
 
@@ -60,12 +59,12 @@
   color: #000;
   font-size: 14px;
   font-weight: 900;
+  line-height: 32px;
   border: solid 1px #000;
   border-radius: 8px;
-  width: 190px;
-  height: 25px;
+  width: 200px;
+  box-sizing: border-box;
   text-align: center;
-  padding-top: 6px;
   margin-top: 15px;
   transition: all .5s ease;
   will-change: transform;
@@ -100,9 +99,6 @@
 
   .contacts__connection {
     width: 150px;
-    height: 30px;
-    padding: 4px 0;
-    box-sizing: border-box;
   }
 }
 
@@ -122,13 +118,13 @@
   .contacts__master {
     margin: 0 0 30px 0;
   }
+
+  .contacts__connection {
+    width: 200px;
+  }
 }
 
 @media screen and (max-width: 480px) {
-  .contacts__connection {
-    height: 27px;
-  }
-
   .contacts__title {
     font-size: 18px;
     margin: 20px;
