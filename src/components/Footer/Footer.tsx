@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="footer__container">
         <div className="footer__copywriting">
           <div>
-            <span className="footer__copywriting_date">
+            <span>
               <strong>
                 &copy;&nbsp;{new Date().getFullYear()}
               </strong>
@@ -19,7 +19,7 @@ export default function Footer() {
               </strong>
             </span>
           </div>
-          <span >created&nbsp;by &nbsp;
+          <span>created&nbsp;by &nbsp;
             <a className="footer__copywriting_author" href="https://github.com/Alexandr-Mokhov" target="_blank" rel="noreferrer">
               Alexander&nbsp;Mokhov
             </a>
