@@ -40,6 +40,14 @@
   color: #E42A24;
 }
 
+.form__warning {
+  font-size: 14px;
+  line-height: 15px;
+  font-weight: 600;
+  text-align: center;
+  margin-left: 50px;
+}
+
 .form__button {
   width: 200px;
   align-self: flex-start;
@@ -81,6 +89,10 @@
 
   .form__error {
     margin: 0 0 0 30px;
+  }
+
+  .form__warning {
+    margin-left: 30px;
   }
 
   .form__button {

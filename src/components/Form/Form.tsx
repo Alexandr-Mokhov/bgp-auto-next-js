@@ -97,6 +97,7 @@ export default function Form({
         maxLength={12}
         required />
       <span className="form__error">{errors['phone']}</span>
+      <p className="form__warning">Нажимая на кнопку «Записаться», Вы подтверждаете своё согласие на обработку Ваших персональных данных.</p>
       <button className="form__button" type="submit" disabled={isLoading || !isValid}>{isLoading ? 'Запись' : 'Записаться'}</button>
     </form>
   )
