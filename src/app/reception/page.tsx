@@ -200,10 +200,10 @@ console.log(dataFromLocalStorage);
         {isInscribed &&
           <div className="reception__button-contaiter">
             <button className="reception__button reception__button_editing" type="button" onClick={handleEdit}>
-              Редактировать запись
+              Редактировать
             </button>
             <button className="reception__button reception__button_reset" type="button" onClick={handleReset}>
-              Отменить запись
+              Отменить
             </button>
           </div>}
       </div>

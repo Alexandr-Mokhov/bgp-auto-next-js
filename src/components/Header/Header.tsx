@@ -8,7 +8,7 @@ import Navigation from '../Navigation/Navigation';
 import { ReceptionContext } from '@/components/Providers/ReceptionProvider';
 
 export default function Header() {
- //** обдумать логику сброса рагистрации */
+  //** обдумать логику сброса рагистрации */
   const [dataFromLocalStorage, setDataFromLocalStorage] = useState({});
   const { isInscribed, setIsInscribed, date, setDate, time, setTime } = useContext(ReceptionContext);
 
@@ -42,20 +42,22 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header__container">
-        <Link className="header__logo-container" href="/">
-          <Image
-            className="header__logo"
-            src={headerLogo}
-            width={72}
-            height={72}
-            alt="Логотип сайта BGP AUTO"
-            priority={true}
-          />
-          <div className="header__title-container">
-            <p className="header__title">BGP&nbsp;AUTO</p>
-            <p className="header__subtitle">AUTOWERKSTATT</p>
-          </div>
-        </Link>
+        <div className="header__logo-container">
+          <Link className="header__logo-focus" href="/">
+            <Image
+              className="header__logo"
+              src={headerLogo}
+              width={72}
+              height={72}
+              alt="Логотип сайта BGP AUTO"
+              priority={true}
+            />
+            <div className="header__title-container">
+              <p className="header__title">BGP&nbsp;AUTO</p>
+              <p className="header__subtitle">AUTOWERKSTATT</p>
+            </div>
+          </Link>
+        </div>
         <div className="header__info-container">
           <div className="header__info">
             <Link className="header__reception" href="/reception">
